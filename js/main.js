@@ -17,7 +17,7 @@ var gitHub = new GitHub(config);
  * @param {File} file The file to read
  *
  * @returns {Promise}
- */
+ *
 function readFile(file) {
    return new Promise(function (resolve, reject) {
       var fileReader = new FileReader();
@@ -42,7 +42,7 @@ function readFile(file) {
       fileReader.readAsDataURL(file);
    });
 }
-
+*/
 /**
  * Save the files provided on the repository with the commit title specified. Each file will be saved with
  * a different commit.
@@ -51,7 +51,7 @@ function readFile(file) {
  * @param {string} commitTitle The commit title
  *
  * @returns {Promise}
- */
+ 
 function uploadFiles(files, commitTitle) {
    // Creates an array of Promises resolved when the content
    // of the file provided is read successfully.
@@ -77,14 +77,14 @@ function uploadFiles(files, commitTitle) {
          );
       });
 }
-
+*/
 document.querySelector('form').addEventListener('submit', function (event) {
    event.preventDefault();
 
-   var files = document.getElementById('file').files;
-   var commitTitle = document.getElementById('commit-title').value;
-
-   uploadFiles(files, commitTitle)
+   //var files = document.getElementById('file').files;
+   //var commitTitle = document.getElementById('commit-title').value;
+	var data = {repository: gitHub.repository, branchName:config.branchName, filename:document.getElementById('commit-title').value, content:document.getElementById('Text').value, commitTitle:document.getElementById('commit-title').value};
+	gitHub.saveFile(data)
       .then(function() {
          alert('Your file has been saved correctly.');
       })
