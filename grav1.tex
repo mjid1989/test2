@@ -1,1 +1,109 @@
-undefined
+		\documentclass[12pt,a4paper]{article}
+		\usepackage[utf8]{inputenc}
+		\usepackage[T1]{fontenc}
+		\usepackage{comment}
+		\usepackage{multicol}
+		\usepackage{adjustbox}
+		\usepackage[francais]{babel}
+		\usepackage{amsmath}
+		\usepackage{amsfonts}
+		\usepackage{amssymb}
+		\usepackage{tabularx}
+		\usepackage{lastpage}
+		\usepackage{setspace}
+		\usepackage{bm}
+		\usepackage{graphicx} %table
+		\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,includehead,includefoot]{geometry}
+		\usepackage{xcolor}
+		\usepackage{graphicx}
+		\usepackage[most]{tcolorbox}
+		\usepackage{varwidth}
+		\usepackage{titlesec}
+		\usepackage{enumitem}
+		\usepackage{fancyhdr} % Mise en page, en-tête et pied de page
+		\setlist[enumerate]{itemsep=0mm}
+		\renewcommand\headrulewidth{1pt}
+\renewcommand\headwidth{\linewidth}
+\renewcommand\footrulewidth{1pt}
+\usepackage{fontspec}
+\setromanfont{Times New Roman}
+		\newtcbtheorem[auto counter]{exercice}%
+		{\textbf{Exercice}}{enhanced jigsaw,breakable,
+		before skip=2mm,after skip=2mm,
+		colback=orange!20,colframe=black!50,boxrule=0.2mm,
+		attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+		varwidth boxed title*=-3cm,
+		boxed title style={frame code={
+		\path[fill=red!30!black]
+		([yshift=-1mm,xshift=-1mm]frame.north west)
+		arc[start angle=0,end angle=180,radius=1mm]
+		([yshift=-1mm,xshift=1mm]frame.north east)
+		arc[start angle=180,end angle=0,radius=1mm];
+		\path[left color=red!60!black,right color=red!60!black,
+		middle color=red!80!black]
+		([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+		[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+		-- (frame.south east) -- (frame.south west)
+		-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+		[sharp corners]-- cycle;
+		},interior engine=empty,
+		},
+		fonttitle=\bfseries,
+		}{theorem}		
+				%Solution ==================================================
+		\newtcolorbox{solution}%
+		{enhanced jigsaw,breakable,
+		colback=pink!20,colframe=black!50,boxrule=0.2mm
+		}
+		\titlespacing{\section}{0pt}{0pt}{0pt}
+		\pagestyle{fancy}
+		\cfoot{page	\thepage /\pageref{LastPage}}
+		%\rfoot{}
+		\lfoot{Ann\`ee Scolaire :
+2018/2019}
+\lhead{Mati\`ere : Physique Chimie\\Prof : Nait ILyasse Mjid }
+\rhead{Lyc\'ee  : Oued eddahab\\Niveau  : TcT}
+\rfoot{La gravitation univeselle}
+\chead{\centering S\'erie d'exercices\\ 
+La gravitation univeselle}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+            \node[shape=circle,left color=red!60!black,right color=red!60!black,
+		middle color=red!80!black,draw,inner sep=1pt] (char) {#1};}}
+\begin{document}
+\renewcommand{\labelitemi}{$\bullet$}\textbf{\begin{exercice}{}/
+					اختر الجواب الصحيح :
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\item قوة التجاذب الكوني المطبقة من طرف الأرض على القمر أكبر شدة من قوة التجاذب الكوني المطبقة من طرف القمر على الأرض:
+					\begin{itemize}[label=$\square$]
+					\item صحيح.
+					\item خطأ.
+					\end{itemize}
+					\item شدة قوة التجاذب الكوني المطبقة بين جسمين تتناسب مع جذاء كتلتيهما :  
+					\begin{itemize}[label=$\square$]
+					\item صحيح.
+					\item خطأ.
+					\end{itemize}
+					\item إذا تضاعفت المسافة بين جسمين نقطيين، فإن 
+					$F$
+					شدة قوة التجاذب الكوني المطبقة بينهما تصير :
+					\begin{itemize}[label=$\square$]
+					\item $2F$.
+					\item $\dfrac{F}{2}$.
+					\item $4F$.
+					\item $\dfrac{F}{4}$.
+					\end{itemize}
+					\item وزن شخص على سطح القمر يختلف عن وزنه على سطح الارض لأن :
+					\begin{itemize}[label=$\square$]
+					\item الشخص بعيدا جدا عن الأرض.
+					\item كتلة وشعاع القمر يختلفان عن كتلة وشعاع الارض.
+					\item كتلة الشخص تغيرت.
+					\end{itemize}
+					\item بجوار الأرض، جسم لا يسقط على الأرض لأنه :
+					\begin{itemize}[label=$\square$]
+					\item لا يخضع لقوة التجاذب الكوني المطبقة من طرف الأرض.
+					\item يخضع لقوة ثانية متعادلة مع قوة التجاذب الكوني المطبقة من طرف الأرض.
+					\item في مدار حول الأرض.
+					\end{itemize}
+					\end{enumerate}
+					\end{exercice}}%=== source ===%    
+\end{document}
