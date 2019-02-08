@@ -1,4 +1,64 @@
-bbbbbb
+\documentclass[12pt,a4paper]{article}
+		\usepackage{amsmath}
+		\usepackage{amsfonts}
+		\usepackage{amssymb}
+		\usepackage{pgf,tikz}
+		\usepackage{mathrsfs}
+		\usepackage{adjustbox}
+		\usepackage{tabularx}
+		\usepackage{multicol}
+		\usepackage{etex}
+		\usepackage{circuitikz}
+		\usetikzlibrary {circuits.ee.IEC}
+		\usepackage{pgf}
+		\usepackage{bm}
+		\usepackage{pstricks}
+		\let\clipbox\relax
+		\usetikzlibrary{arrows}
+		\usepackage{lastpage}
+		\usepackage{setspace}
+		\usepackage{enumitem}
+		\usepackage{graphicx} %table
+		\usepackage{diagbox}
+		\usepackage[left=0.75cm,right=0.75cm,top=0.5cm,bottom=0.75cm,includehead,includefoot]{geometry}
+		\usepackage{xcolor}
+		\usepackage{polyglossia}
+		\usepackage{graphicx}
+		\usepackage[most]{tcolorbox}
+		\usepackage{titlesec}
+		\usepackage{fancyhdr} % Mise en page, en-tأھte et pied de page
+		\usepackage[a4,frame,center]{crop}
+		\setdefaultlanguage[calendar=gregorian,numerals=maghrib]{arabic}
+		\setotherlanguage{french}
+		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
+		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
+		\newtcbtheorem[auto counter]{exercice}%
+		{\textbf{طھظ…ط±ظٹظ†}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,
+			arc=0mm, colback=white!5!white,colframe=black!50!black}{theorem}
+			%Solution ==================================================
+		\newtcbtheorem[]{solution}%
+		{\textbf{ط­ظ„ ط§ظ„طھظ…ط±ظٹظ†}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
+		attach boxed title to top center={xshift=0cm,yshift=-3.7mm},
+		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
+		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
+		interior style={top color=white!10!white,bottom color=white!10!white},
+		boxed title style={boxrule=0.5mm,
+		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
+		-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
+		-- (frame.south east) -- (frame.south west) -- cycle; },
+		interior code={ \path[tcb fill interior] ([xshift=-2mm]interior.west)
+		-- (interior.north west) -- (interior.north east)
+		-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
+		-- cycle;} }
+		,arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		%============================================================
+		\setlength{\columnseprule}{1pt}
+		\def\columnseprulecolor{\color{blue}}
+		\titlespacing{\section}{0pt}{0pt}{0pt}
+		\pagestyle{fancy}
+		\cfoot{\thepage}
+		%\rfoot{}
+		\lfoot{ط§ظ„ط³ظ†ط© ط§ظ„ط¯ط±ط§ط³ظٹط© : 
   2018/2019}
 \lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  نايت الياس  }
 \rhead{الثانوية التأهيلية  : وادي الذهب  \\المستوى الدراسي  :  الجذع المشترك العلمي }
@@ -13,8 +73,5 @@ bbbbbb
 .\dotfill
  
   abdle 
-  lkbir 
-  nait  
-  lyasse
   
 \end{document}
