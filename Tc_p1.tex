@@ -25,47 +25,26 @@
 		\usepackage{polyglossia}
 		\usepackage{graphicx}
 		\usepackage[most]{tcolorbox}
-		\usepackage{titlesec}
 		\usepackage{varwidth}
+		\usepackage{titlesec}
+		\usepackage{enumitem}
 		\usepackage{fancyhdr} % Mise en page, en-tête et pied de page
-		\usepackage[a4,frame,center]{crop}
 		\setdefaultlanguage[calendar=gregorian,numerals=maghrib]{arabic}
 		\setotherlanguage{french}
-		%\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Arial}
-		%\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Arial}
 		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
 		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
+		\author{نايت الياس}
+		\setlist[enumerate]{itemsep=0mm}
 		\newtcbtheorem[auto counter]{exercice}%
-		{\textbf{تمرين}}{enhanced jigsaw,breakable,
-		before skip=2mm,after skip=2mm,
-		colback=blue!10,colframe=black!50,boxrule=0.2mm,
-		attach boxed title to top right={xshift=-1cm,yshift*=1mm-\tcboxedtitleheight},
-		varwidth boxed title*=-3cm,
-		boxed title style={frame code={
-		\path[fill=red!30!black]
-		([yshift=-1mm,xshift=-1mm]frame.north west)
-		arc[start angle=0,end angle=180,radius=1mm]
-		([yshift=-1mm,xshift=1mm]frame.north east)
-		arc[start angle=180,end angle=0,radius=1mm];
-		\path[left color=blue!60!black,right color=blue!60!black,
-		middle color=blue!80!black]
-		([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-		[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
-		-- (frame.south east) -- (frame.south west)
-		-- ([xshift=-1mm,yshift=-1mm]frame.north west)
-		[sharp corners]-- cycle;
-		},interior engine=empty,
-		},
-		fonttitle=\bfseries,
-		}{theorem}
-		%Solution ==================================================
+		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,
+			arc=0mm, colback=white!5!white,colframe=black,attach boxed title to top right={yshift=-3mm,xshift=-5mm},colbacktitle=white!20!white,sharpish corners,coltitle=black!40!black}{theorem}
+			%Solution ==================================================
 		\newtcbtheorem[]{solution}%
 		{\textbf{حل التمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
-		colback=blue!10,colframe=black!50,boxrule=0.2mm,
 		attach boxed title to top center={xshift=0cm,yshift=-3.7mm},
 		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
-		colbacktitle=white!45!white,coltitle=white!10!black,colframe=blue!50!black,
-		interior style={top color=blue!10,bottom color=blue!10},
+		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
+		interior style={top color=white!10!white,bottom color=white!10!white},
 		boxed title style={boxrule=0.5mm,
 		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
 		-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
@@ -74,13 +53,30 @@
 		-- (interior.north west) -- (interior.north east)
 		-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
 		-- cycle;} }
-		}{theorem}
+		,arc=0mm, colback=white!5!white,colframe=black!50!white}{theorem}
 		%============================================================
 		\setlength{\columnseprule}{1pt}
-		\def\columnseprulecolor{\color{blue}}
+		\def\columnseprulecolor{\color{black}}
 		\titlespacing{\section}{0pt}{0pt}{0pt}
-		\definecolor{color1}{RGB}{250,250,190}
-%\pagecolor{color1}
+		\NewTColorBox[auto counter]{exercises}{+O{}}{%
+		enhanced,colframe=green!20!black,colback=yellow!10!white,coltitle=green!40!black,
+		fonttitle=\bfseries,
+		underlay={\begin{tcbclipinterior}
+		\shade[inner color=green!80!yellow,outer color=yellow!10!white]
+		(interior.north west) circle (2cm);
+		\draw[help lines,step=5mm,yellow!80!black,shift={(interior.north west)}]
+		(interior.south west) grid (interior.north east);
+		\end{tcbclipinterior}},
+		title={Exercise~\thetcbcounter:},
+		label={exercise@\thetcbcounter},
+		attach title to upper=\quad,
+		after upper={\par\hfill\textcolor{green!40!black}%
+		{\itshape Solution on page~\pageref{solution@\thetcbcounter}}},
+		lowerbox=ignored,
+		savelowerto=solutions/exercise-\thetcbcounter.tex,
+		record={\string\solution{\thetcbcounter}{solutions/exercise-\thetcbcounter.tex}},
+		#1
+		}		
 		\titlespacing{\section}{0pt}{0pt}{0pt}
 		\pagestyle{fancy}
 		\cfoot{\thepage}
@@ -99,112 +95,6 @@
 \noindent
 .\dotfill
  
-  Exercice 4
-\textbf{\begin{exercice}{}/
-					\begin{flushright}
-					نعتبر الأبعاد التالية :\\	
-\begin{minipage}[c]{0.49\linewidth}
-\indent
-\vspace{-0.1cm}
-					\begin{itemize}
-					\item المسافة بین الأرض والقمر
-					\hrulefill
-					$\bm{A = 380\ 000\ km}$
-					\item شعاع ذرة الھیدروجین
-					\hrulefill
-					$\bm{B=1,05.10^{-10}\ m}$
-					\item ارتفاع جبل توبقال
-					\hrulefill
-					$\bm{C=4165\ m}$
-					\item قطر جزیئة
-					\hrulefill
-					$\bm{D=2\ nm}$
-					\item شعاع الأرض
-					\hrulefill
-					$\bm{E=6\ 400\ km}$ 
-					\item قامة إنسان
-					\hrulefill
-					$\bm{F=170\ cm}$
-					\end{itemize}
-\end{minipage}
-\begin{minipage}[c]{0.49\linewidth}	
-\indent
-\vspace{-0.1cm}	
-\begin{itemize} 			
-					\item المسافة بین الأرض و الشمس
-					\hrulefill
-					$\bm{G=150.10^{6}\ km}$
-					\item شعاع نواة ذرة الھیدروجین
-					\hrulefill
-					$\bm{H=10^{-15}\ m }$
-					\item قطر مجرتنا
-					\hrulefill
-					$\bm{I=9,5.10^{17}\ km }$ 
-					\item قطر خلیة
-					\hrulefill
-					$\bm{J=10\ \mu m }$
-					\item شعاع الشمس
-					\hrulefill
-					$\bm{K=700\ 000\ km }$ 
-					\item القطر التقریبي للكون
-					\hrulefill
-					$\bm{L=12.10^{22}\ km }$ 
-					\end{itemize}
-\end{minipage}
-					\begin{enumerate}[leftmargin=*]
-					\item حول الى الوحدة العالمية إن كان ممكنا.
-					\item أكتب هذه الأبعاد كتابة علمية.
-					\item استنتج رتب القدر.
-					\item مثل  هذه المسافات على محور سلم المسافات.
-					\end{enumerate}
-					\end{flushright}
-					\end{exercice}}%=== source ===%  
-  %Exercice 3
-\textbf{\begin{exercice}{}/
-					إعط رتبة قدر الأعداد التالية :\\
-					\begin{minipage}[c]{0.5\linewidth}
-					\vspace{-0.3cm}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{ n_1=94= }\dotfill$
-							\item $\bm{ n_2=0.0018= }\dotfill$
-							\item $\bm{n_3=3.10^{2}= }\dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\begin{minipage}[c]{0.5\linewidth}
-					\vspace{-0.3cm}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{n_4=8,7.10^{-3}=}\dotfill$
-							\item $\bm{ n_5=7= }\dotfill$
-							\item $\bm{ n_6=0= }\dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\end{exercice}}%=== source ===%
-  %Exercice 2
-\textbf{\begin{exercice}{}/
-					عبر عن الأطوال التالية بالكتابة العلمية :\\			
-					\begin{minipage}[c]{0.55\linewidth}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{ L_1=150\ 000\ 000\ km=} \dotfill$
-							\item $\bm{ L_2=6\ 400\ km=} \dotfill$
-							\item $\bm{ L_3=0.6012.10^3\ m=}\dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\begin{minipage}[c]{0.45\linewidth}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{L_4=45\ \mu m=} \dotfill$
-							\item $\bm{L_5=0.005\ nm=}\dotfill$
-							\item $\bm{L_6=0,300\ km=} \dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\end{exercice}}%=== source ===%
   %Exercice 5
 \textbf{\begin{exercice}{}/
 					اختر الجواب الصحيح :
@@ -242,5 +132,51 @@
 					\end{itemize}
 					\end{enumerate}
 					\end{exercice}}%=== source ===%  
+  %Exercice 2
+\textbf{\begin{exercice}{}/
+					عبر عن الأطوال التالية بالكتابة العلمية :\\			
+					\begin{minipage}[c]{0.55\linewidth}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{ L_1=150\ 000\ 000\ km=} \dotfill$
+							\item $\bm{ L_2=6\ 400\ km=} \dotfill$
+							\item $\bm{ L_3=0.6012.10^3\ m=}\dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\begin{minipage}[c]{0.45\linewidth}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{L_4=45\ \mu m=} \dotfill$
+							\item $\bm{L_5=0.005\ nm=}\dotfill$
+							\item $\bm{L_6=0,300\ km=} \dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\end{exercice}}%=== source ===%
+  %Exercice 3
+\textbf{\begin{exercice}{}/
+					إعط رتبة قدر الأعداد التالية :\\
+					\begin{minipage}[c]{0.5\linewidth}
+					\vspace{-0.3cm}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{ n_1=94= }\dotfill$
+							\item $\bm{ n_2=0.0018= }\dotfill$
+							\item $\bm{n_3=3.10^{2}= }\dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\begin{minipage}[c]{0.5\linewidth}
+					\vspace{-0.3cm}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{n_4=8,7.10^{-3}=}\dotfill$
+							\item $\bm{ n_5=7= }\dotfill$
+							\item $\bm{ n_6=0= }\dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\end{exercice}}%=== source ===%
   
 \end{document}
