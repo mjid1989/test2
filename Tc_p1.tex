@@ -26,31 +26,46 @@
 		\usepackage{graphicx}
 		\usepackage[most]{tcolorbox}
 		\usepackage{titlesec}
+		\usepackage{varwidth}
 		\usepackage{fancyhdr} % Mise en page, en-tête et pied de page
 		\usepackage[a4,frame,center]{crop}
 		\setdefaultlanguage[calendar=gregorian,numerals=maghrib]{arabic}
 		\setotherlanguage{french}
+		%\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Arial}
+		%\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Arial}
 		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
 		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
 		\newtcbtheorem[auto counter]{exercice}%
-		{\textbf{تمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,
-		attach boxed title to top right={xshift=-1cm,yshift=-3mm},
-		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
-		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
-		interior style={top color=white!10!white,bottom color=blue!10!white},
-		boxed title style={boxrule=0.3mm,colframe=white,
-		borderline={0.1mm}{0mm}{blue!50!black},
-		borderline={0.1mm}{0.4mm}{blue!50!black},
-		interior style={top color=white!10!white,bottom color=white!10!white,
-		middle color=blue!10!white},
-		drop fuzzy shadow,arc=0mm},arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		{\textbf{تمرين}}{enhanced jigsaw,breakable,
+		before skip=2mm,after skip=2mm,
+		colback=yellow!20,colframe=black!50,boxrule=0.2mm,
+		attach boxed title to top right={xshift=-1cm,yshift*=1mm-\tcboxedtitleheight},
+		varwidth boxed title*=-3cm,
+		boxed title style={frame code={
+		\path[fill=red!30!black]
+		([yshift=-1mm,xshift=-1mm]frame.north west)
+		arc[start angle=0,end angle=180,radius=1mm]
+		([yshift=-1mm,xshift=1mm]frame.north east)
+		arc[start angle=180,end angle=0,radius=1mm];
+		\path[left color=red!60!black,right color=red!60!black,
+		middle color=red!80!black]
+		([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+		[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+		-- (frame.south east) -- (frame.south west)
+		-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+		[sharp corners]-- cycle;
+		},interior engine=empty,
+		},
+		fonttitle=\bfseries,
+		}{theorem}
 		%Solution ==================================================
 		\newtcbtheorem[]{solution}%
 		{\textbf{حل التمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
+		colback=yellow!10,colframe=black!50,boxrule=0.2mm,
 		attach boxed title to top center={xshift=0cm,yshift=-3.7mm},
 		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
-		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
-		interior style={top color=white!10!white,bottom color=blue!10!white},
+		colbacktitle=white!45!white,coltitle=white!10!black,colframe=red!50!black,
+		interior style={top color=yellow!10,bottom color=yellow!10},
 		boxed title style={boxrule=0.5mm,
 		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
 		-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
@@ -59,16 +74,18 @@
 		-- (interior.north west) -- (interior.north east)
 		-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
 		-- cycle;} }
-		,arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		}{theorem}
 		%============================================================
 		\setlength{\columnseprule}{1pt}
-		\def\columnseprulecolor{\color{blue}}
+		\def\columnseprulecolor{\color{red}}
 		\titlespacing{\section}{0pt}{0pt}{0pt}
+		\definecolor{color1}{RGB}{250,250,190}
+%\pagecolor{color1}
 		\titlespacing{\section}{0pt}{0pt}{0pt}
 		\pagestyle{fancy}
 		\cfoot{\thepage}
 		%\rfoot{}
-		\lfoot{السنة الدراسية :  
+		\lfoot{السنة الدراسية : 
   2018/2019}
 \lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  مجيد نايت الياس  }
 \rhead{الثانوية التأهيلية  : وادي الذهب  \\المستوى الدراسي  :  ج.م.ع }
@@ -82,52 +99,6 @@
 \noindent
 .\dotfill
  
-  %Exercice 3
-\textbf{\begin{exercice}{}/
-					إعط رتبة قدر الأعداد التالية :\\
-					\begin{minipage}[c]{0.5\linewidth}
-					\vspace{-0.3cm}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{ n_1=94= }\dotfill$
-							\item $\bm{ n_2=0.0018= }\dotfill$
-							\item $\bm{n_3=3.10^{2}= }\dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\begin{minipage}[c]{0.5\linewidth}
-					\vspace{-0.3cm}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{n_4=8,7.10^{-3}=}\dotfill$
-							\item $\bm{ n_5=7= }\dotfill$
-							\item $\bm{ n_6=0= }\dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\end{exercice}}%=== source ===%
-  %Exercice 2
-\textbf{\begin{exercice}{}/
-					عبر عن الأطوال التالية بالكتابة العلمية :\\			
-					\begin{minipage}[c]{0.55\linewidth}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{ L_1=150\ 000\ 000\ km=} \dotfill$
-							\item $\bm{ L_2=6\ 400\ km=} \dotfill$
-							\item $\bm{ L_3=0.6012.10^3\ m=}\dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\begin{minipage}[c]{0.45\linewidth}
-					\indent
-					\textfrench{
-						\begin{itemize}
-							\item $\bm{L_4=45\ \mu m=} \dotfill$
-							\item $\bm{L_5=0.005\ nm=}\dotfill$
-							\item $\bm{L_6=0,300\ km=} \dotfill$
-						\end{itemize}}
-					\end{minipage}
-					\end{exercice}}%=== source ===%
   %Exercice 5
 \textbf{\begin{exercice}{}/
 					اختر الجواب الصحيح :
@@ -165,5 +136,51 @@
 					\end{itemize}
 					\end{enumerate}
 					\end{exercice}}%=== source ===%  
+  %Exercice 2
+\textbf{\begin{exercice}{}/
+					عبر عن الأطوال التالية بالكتابة العلمية :\\			
+					\begin{minipage}[c]{0.55\linewidth}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{ L_1=150\ 000\ 000\ km=} \dotfill$
+							\item $\bm{ L_2=6\ 400\ km=} \dotfill$
+							\item $\bm{ L_3=0.6012.10^3\ m=}\dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\begin{minipage}[c]{0.45\linewidth}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{L_4=45\ \mu m=} \dotfill$
+							\item $\bm{L_5=0.005\ nm=}\dotfill$
+							\item $\bm{L_6=0,300\ km=} \dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\end{exercice}}%=== source ===%
+  %Exercice 3
+\textbf{\begin{exercice}{}/
+					إعط رتبة قدر الأعداد التالية :\\
+					\begin{minipage}[c]{0.5\linewidth}
+					\vspace{-0.3cm}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{ n_1=94= }\dotfill$
+							\item $\bm{ n_2=0.0018= }\dotfill$
+							\item $\bm{n_3=3.10^{2}= }\dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\begin{minipage}[c]{0.5\linewidth}
+					\vspace{-0.3cm}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{n_4=8,7.10^{-3}=}\dotfill$
+							\item $\bm{ n_5=7= }\dotfill$
+							\item $\bm{ n_6=0= }\dotfill$
+						\end{itemize}}
+					\end{minipage}
+					\end{exercice}}%=== source ===%
   
 \end{document}
