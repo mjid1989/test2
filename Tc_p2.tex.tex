@@ -20,7 +20,7 @@
 		\usepackage{enumitem}
 		\usepackage{graphicx} %table
 		\usepackage{diagbox}
-		\usepackage[left=0.75cm,right=0.75cm,top=0.5cm,bottom=0.75cm,includehead,includefoot]{geometry}
+		\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,includehead,includefoot]{geometry}
 		\usepackage{xcolor}
 		\usepackage{polyglossia}
 		\usepackage{graphicx}
@@ -33,15 +33,24 @@
 		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
 		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
 		\newtcbtheorem[auto counter]{exercice}%
-		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 1 mm ,
-			arc=0mm, colback=white!5!white,colframe=black!50!black}{theorem}
-			%Solution ==================================================
+		{\textbf{تمرين}}{enhanced jigsaw,breakable,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 1 mm ,
+		attach boxed title to top right={xshift=-1cm,yshift=-3mm},
+		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
+		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
+		interior style={top color=white!10!white,bottom color=blue!10!white},
+		boxed title style={boxrule=0.3mm,colframe=white,
+		borderline={0.1mm}{0mm}{blue!50!black},
+		borderline={0.1mm}{0.4mm}{blue!50!black},
+		interior style={top color=white!10!white,bottom color=white!10!white,
+		middle color=blue!10!white},
+		drop fuzzy shadow,arc=0mm},arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		%Solution ==================================================
 		\newtcbtheorem[]{solution}%
 		{\textbf{حل التمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
 		attach boxed title to top center={xshift=0cm,yshift=-3.7mm},
 		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
 		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
-		interior style={top color=white!10!white,bottom color=white!10!white},
+		interior style={top color=white!10!white,bottom color=blue!10!white},
 		boxed title style={boxrule=0.5mm,
 		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
 		-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
@@ -54,6 +63,7 @@
 		%============================================================
 		\setlength{\columnseprule}{1pt}
 		\def\columnseprulecolor{\color{blue}}
+		\titlespacing{\section}{0pt}{0pt}{0pt}
 		\titlespacing{\section}{0pt}{0pt}{0pt}
 		\pagestyle{fancy}
 		\cfoot{\thepage}
@@ -96,6 +106,8 @@
 					$\bm{{1cm\ \longrightarrow\ 1N}}$
 					مثل هذه القوى.
 					\end{enumerate}
+					نعطي
+					$\bm{g=10\ N.kg^{-1}}$.}
 					\end{minipage}
 					\begin{minipage}[c]{0.24\linewidth}
 \definecolor{cffffff}{RGB}{255,255,255}
@@ -156,8 +168,6 @@
 \end{adjustbox}
 \end{flushleft}
 					\end{minipage}
-					نعطي
-					$\bm{g=10\ N.kg^{-1}}$.}
 					\end{exercice}%=== source ===%
   %Exercice 2
 \begin{exercice}{}/
@@ -941,6 +951,188 @@
 \end{flushleft}
 					\end{minipage}}
 					\end{exercice}%=== source ===%  
+  %Exercice 11
+\begin{exercice}{}/
+					\textbf{وضعت كرتان 
+					$\bm{(S_1)}$
+					و
+					$\bm{(S_2)}$
+					بين جدرانين مستويين ورأسيين 
+					$\bm{AB}$
+					و
+					$\bm{CD}$،
+					بحيث يتحقق توازنهما. مركزا الكرتين 
+					$\bm{O_1}$
+					و
+					$\bm{O_2}$
+					والنقطة 
+					$\bm{A}$
+					تنتمي إلى نفس لمستقيم. نعتبر الإحتكاكات مهملة.
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\begin{minipage}[c]{0.7\linewidth}
+					\item أجرد القوى المطبقة على كل من الكرتين، وصنفها في جدول الى قوى تماس وقوى عن بعد محددا مميزاتها التالية :
+					\begin{itemize}
+					\item نقطة التأثير.
+					\item خط التأثير.
+					\item المنحى.
+					\end{itemize}
+					\item أنقل الشكل، ومثل بدون سلم متجهات القوى المطبقة على كل من الكرتين.
+					\end{minipage}
+					\begin{minipage}[c]{0.29\linewidth}
+					\begin{center}
+					\fbox{\includegraphics[width=0.9\linewidth]{images/Tc/p2/im1.png}}\\
+					\end{center}
+					\end{minipage}
+					\end{enumerate}}
+					\end{exercice}%=== source ===%
+  %Exercice 12
+\begin{exercice}{}/
+					\textbf{نربط كرية حديدية بالطرف السفلي لخيط طرفه العلوي مثبت بحامل (حال 1 ممثلة بالشكل 1).\\
+					يوضع مغنطيس بالقرب من الكرية فينحرف الخيط (حالة 2 ممثلة بالشكل 2).
+					\begin{center}
+					\fbox{\includegraphics[width=0.5\linewidth]{images/Tc/p2/im2.png}}\\
+					\end{center}
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\item أجرد القوى المطبقة على الكرية في الحالة 1 ومثل بدون سلم متجهات القوى في الشكل 1.
+					\item أجرد القوى المطبقة على الكرية في الحالة 2 ومثل بدون سلم متجهات القوى في الشكل 2.
+					\end{enumerate}}
+					\end{exercice}%=== source ===% 
+  %Exercice 13
+\begin{exercice}{}/
+					\textbf{وضع جسم صلب 
+					$\bm{(S)}$
+					كتلته 
+					$\bm{m=1\ kg}$
+					على سطح مستوي ومائل بالزاوية 
+					$\bm{\alpha=20^o}$
+					بالنسبة للمستوى الأفقي.\\
+					يلاحظ أن الجسم لا ينزلق على السطح ويبقى في حالة توازن.
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\begin{minipage}[c]{0.59\linewidth}
+					\item أجرد القوى المطبقة على 
+					$\bm{(S)}$.
+					\item بتطبيق شرط توازن جسم صلب خاضع لقوتين بين أن التماس بين 
+					$\bm{(S)}$
+					والسطح يتم باحتكاك.
+					\item حدد شدة 
+					$\bm{{\overrightarrow{R}}}$
+					المقرونة بتأثير سطح التماس على 
+					$\bm{(S)}$
+					وقيمة زاوية الإحتكاك 
+					 $\bm{\varphi}$.
+					 \item استنتج شدة المركبتين المماسية 
+					 $\bm{{\overrightarrow{R}_T}}$
+					 والمنظمية
+					  $\bm{{\overrightarrow{R}_N}}$
+					 للقوة
+					  $\bm{{\overrightarrow{R}}}$.
+					\end{minipage}
+					\begin{minipage}[c]{0.39\linewidth}
+					\begin{flushleft}
+					\fbox{\includegraphics[width=0.9\linewidth]{images/Tc/p2/im3.png}}
+					\end{flushleft}
+					\end{minipage}
+					\end{enumerate}
+					نعطي : شدة الثقالة 
+					$\bm{g=10\ N.kg^{-1}}$.}
+					\end{exercice}%=== source ===%
+  %Exercice 14
+\begin{exercice}{}/
+					\textbf{على سطح مستوي وأفقي، وضع جسم صلب أسطواني الشكل كتلته 
+					$\bm{m=10\ kg}$
+					وقطر قاعدته 
+					$\bm{d=10\ cm}$.\\
+					\begin{minipage}[c]{0.69\linewidth}
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\item أحسب شدة القوة الضاغطة التي يطبقها الجسم على سطح التماس.
+					\item مثل متجهة القوة الضاغطة باستعمال سلم مناسب.
+					\item أحسب قيمة الضعط الذي يطبقه الجسم على سطح التماس.
+					\end{enumerate}
+					نعطي : شدة الثقالة 
+					$\bm{g=10\ N.kg^{-1}}$.
+					\end{minipage}
+					\begin{minipage}[c]{0.29\linewidth}
+					\begin{center}
+					\fbox{\includegraphics[width=0.9\linewidth]{images/Tc/p2/im4.png}}
+					\end{center}
+					\end{minipage}}
+					\end{exercice}%=== source ===% 
+  %Exercice 15
+\begin{exercice}{}/
+					\textbf{في سائل يتغير الضغط 
+					$\bm{p}$
+					بدلالة العمق 
+					$\bm{h}$
+					حسب العلاقة التالية : 
+					$\bm{p-p_0=\rho.g.h}$\\
+					حيث 
+					$\bm{p_0}$
+					الضغط الجوي، و
+					$\bm{\rho}$
+					الكتلة الحجمية للسائل.
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\begin{minipage}[c]{0.59\linewidth}
+					\item باستغلال علاقة الضغط بالعمق، فسر لماذا ينبغي أن تكون قاعدة سد أعرض من جزئه العلوي.
+					\item أحسب قيمة ضغط الماء عند العمق 
+					$\bm{h=60\ m}$.
+					\item أحسب شدة القوة الضاغطة المطبقة على غطاء سِكْر له شكل قرص قطره 
+					$\bm{d=1,0\ m}$
+					عند العمق 
+					$\bm{h=60\ m}$.
+					\end{minipage}
+					\begin{minipage}[c]{0.4\linewidth}
+					\begin{flushleft}
+					\fbox{\includegraphics[width=0.8\linewidth]{images/Tc/p2/im5.png}}
+					\end{flushleft}
+					\end{minipage}
+					\end{enumerate}
+				نعطي :
+					\begin{itemize}
+					\item الضغط الجوي :
+					$\bm{p_0=1,0.10^5\ Pa}$.
+					\item شدة الثقالة : 
+					$\bm{g=10\ N.kg^{-1}}$.
+					\item الكتلة الحجمية للماء : 
+					$\bm{{\rho=1,0.10^3\ kg.m^{-3}}}$.
+					\end{itemize}}
+					\end{exercice}%=== source ===%  
+  %Exercice 16
+\begin{exercice}{}/
+					\textbf{نقرب عارضة مكهربة من كرية مكهربة فولاذية معلقة بواسطة خيط ثبت طرفه إلى حامل.
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\begin{minipage}[c]{0.64\linewidth}
+					\item أجرد القوى المطبقة على الكرية.
+					\item صنف هذه القوى إلى قوى تماس و قوى عن بعد وقوى تماس مموضعة و قوى تماس موزعة.
+					\item هل هذه القوى داخلية أم خارجية؟
+					\item
+					 إذا اختيرت المجموعة \{الكرية ، الخيط\} . هل القوة التي يطبقها الخيط على الكرية داخلية أم خارجية؟ علل جوابك.
+					\end{minipage}
+					\begin{minipage}[c]{0.34\linewidth}
+					\begin{flushleft}
+					\fbox{\includegraphics[width=0.9\linewidth]{images/Tc/p2/im6.png}}
+					\end{flushleft}
+					\end{minipage}
+					\end{enumerate}}
+					\end{exercice}%=== source ===%
+  %Exercice 17
+\begin{exercice}{}/
+					\textbf{نجر جسما 
+					$\bm{(S)}$
+					بواسطة خيط غير قابل للتمدد على سطح أفقي ثم على سطح مائل كما يبين الشكل جانبه. \\مثل بدون سلم القوى المطبقة على
+					$\bm{(S)}$
+					في الحالتين :
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\begin{minipage}[c]{0.34\linewidth}
+					\item التماس يتم بدون احتكاك.
+					\item التماس يتم باحتكاك.
+					\end{minipage}
+					\begin{minipage}[c]{0.64\linewidth}
+					\begin{flushleft}
+					\fbox{\includegraphics[width=0.9\linewidth]{images/Tc/p2/im7.png}}
+					\end{flushleft}
+					\end{minipage}
+					\end{enumerate}}
+					\end{exercice}%=== source ===%
   %Exercice 18
 \begin{exercice}{}/
 					\textbf{تتكون محقنة أسطوانية الشكل من مكبس شعاعه
@@ -951,6 +1143,82 @@
 					\item بواسطة تبيانة بسيطة جدا حدد اتجاه القوة الضاغطة المطبقة من طرف الغاز على المكبس.
 					\item أحسب شدة هذه القوة.
 					\end{enumerate}}
+					\end{exercice}%=== source ===%
+  %Exercice 19
+\begin{exercice}{}/
+					\textbf{\textbf{نعتبر عارضة
+					$OA$
+					  كتلتها
+					$M=0,5kg$
+						و طولها
+					$L=1m$
+						قابلة للدوران حول محور
+					$\vartriangle$   
+					أفقي يمر من طرفها 
+					$O$
+					ومرتبطة بالطرف الحر
+					 $A$ 
+					لنابض
+					كتلته مهملة و طوله الأصلي 
+					$I_0$
+					 تكون العارضة زاوية
+					 $\alpha$
+					  مع الخط المنظمي.
+					\begin{center}
+					\fbox{\includegraphics[width=0.5\linewidth]{images/Tc/p2/im8.png}}\\
+					\end{center}
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\item 
+					نعتبر المجموعة
+					 \{نابض ، عارضة OA \} . 
+					 أجرد القوى المطبقة على المجموعة، ثم صنفها إلى قوى داخلية و خارجية. ماذا يمكن أن نستنتج
+					للقوى الداخلية.
+					\item صنف القوى الخارجية إلى قوى التماس و قوى عن بعد ثم إلى قوى التماس
+					المموضعة و قوى التماس الموزعة.
+					\item مثل على التبيانة متجهة وزن العارضة و متجهة القوة المطبقة من طرف العارضة
+					على النابض إذا علمت أن شدتها
+					$\bm{6\ N}$.
+					السلم
+					${4N\longleftrightarrow 1cm}$.
+					\item نعتبر المجموعة المدروسة العارضة . أجرد القوى المطبقة على العارضة. مثل على
+					تبيانة متجهة القوة المطبقة من طرف النابض على العارضة، غذا علمت أن شدتها
+					$6N$.
+					استعمل نفس السلم السابق.
+					\end{enumerate}}}
+					\end{exercice}%=== source ===%
+  %Exercice 20
+\begin{exercice}{}/
+					\textbf{لاحظ الشكل التالي، حيث الكرية
+					$\bm{A}$
+					مغمورة في الماء. إملأ الجدول التالي بوضع علامة
+					$\bm{(\times)}$
+					في الخانة المناسبة:
+					\begin{minipage}[c]{0.74\linewidth}
+					\begin{center}
+					 \begin{tabular}{|c|c|c|c|c|c|c|}
+					\hline 
+					 & نعم & لا & عن بعد & بالتماس & تأثير مموضع & تأثير موزع \\ 
+					\hline 
+					يؤثر الخيط على $A$ &   &   &   &   &  &  \\ 
+					\hline 
+					يؤثر الأرض على  $A$ &   &   &   &   &   &   \\ 
+					\hline 
+					يؤثر الماء على  $A$ &   &   &   &   &   &   \\ 
+					\hline 
+					يؤثر الحامل على الخيط &   &   &   &   &   &   \\ 
+					\hline 
+					يؤثر  $A$ على الخيط &   &   &   &   &   &   \\ 
+					\hline 
+					يؤثر الحامل على  $A$ &   &   &   &   &  &   \\ 
+					\hline 
+					\end{tabular}
+					 \end{center} 
+					\end{minipage}
+					\begin{minipage}[c]{0.24\linewidth}
+					\begin{flushleft}
+					\fbox{\includegraphics[width=0.6\linewidth]{images/Tc/p2/im9.png}}
+					\end{flushleft}
+					\end{minipage}}
 					\end{exercice}%=== source ===%
   %Exercice 21
 \begin{exercice}{}/
