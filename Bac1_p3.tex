@@ -1,0 +1,468 @@
+\documentclass[12pt,a4paper]{article}
+		\usepackage{amsmath}
+		\usepackage{amsfonts}
+		\usepackage{amssymb}
+		\usepackage{pgf,tikz}
+		\usepackage{mathrsfs}
+		\usepackage{adjustbox}
+		\usepackage{tabularx}
+		\usepackage{multicol}
+		\usepackage{etex}
+		\usepackage{circuitikz}
+		\usetikzlibrary {circuits.ee.IEC}
+		\usepackage{pgf}
+		\usepackage{bm}
+		\usepackage{pstricks}
+		\let\clipbox\relax
+		\usetikzlibrary{arrows}
+		\usepackage{lastpage}
+		\usepackage{setspace}
+		\usepackage{enumitem}
+		\usepackage{graphicx} %table
+		\usepackage{diagbox}
+		\usepackage[left=0.75cm,right=0.75cm,top=0.5cm,bottom=0.75cm,includehead,includefoot]{geometry}
+		\usepackage{xcolor}
+		\usepackage{polyglossia}
+		\usepackage{graphicx}
+		\usepackage[most]{tcolorbox}
+		\usepackage{titlesec}
+		\usepackage{fancyhdr} % Mise en page, en-tête et pied de page
+		\usepackage[a4,frame,center]{crop}
+		\setdefaultlanguage[calendar=gregorian,numerals=maghrib]{arabic}
+		\setotherlanguage{french}
+		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
+		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
+		\newtcbtheorem[auto counter]{exercice}%
+		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 1 mm ,
+			arc=0mm, colback=white!5!white,colframe=black!50!black}{theorem}
+			%Solution ==================================================
+		\newtcbtheorem[]{solution}%
+		{\textbf{حل التمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
+		attach boxed title to top center={xshift=0cm,yshift=-3.7mm},
+		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
+		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
+		interior style={top color=white!10!white,bottom color=white!10!white},
+		boxed title style={boxrule=0.5mm,
+		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
+		-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
+		-- (frame.south east) -- (frame.south west) -- cycle; },
+		interior code={ \path[tcb fill interior] ([xshift=-2mm]interior.west)
+		-- (interior.north west) -- (interior.north east)
+		-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
+		-- cycle;} }
+		,arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		%============================================================
+		\setlength{\columnseprule}{1pt}
+		\def\columnseprulecolor{\color{blue}}
+		\titlespacing{\section}{0pt}{0pt}{0pt}
+		\pagestyle{fancy}
+		\cfoot{\thepage}
+		%\rfoot{}
+		\definecolor{color1}{RGB}{0,0,0}
+		\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+        \node[shape=circle,left color=color1!60!black,right color=color1!60!black,
+		middle color=color1!80!black,draw,inner sep=1pt] (char) {#1};}}
+		%==============================
+		\newcommand*\rectled[1]{\tikz[baseline=(char.base)]{%
+        \node[shape=rectangle,left color=color1!60!black,right color=color1!60!black,
+		middle color=color1!80!black,draw,inner sep=1pt] (char) {#1};}}
+		\lfoot{السنة الدراسية : 
+  }
+\lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  }
+\rhead{الثانوية التأهيلية  : \\المستوى الدراسي  :  }
+\rfoot{الشغل والطاقة الحركية  }
+\lfoot{}
+ \chead{\centering سلسلة تمارين\\ 
+الشغل والطاقة الحركية  }
+\begin{document}
+  
+  %Exercice 1
+					\begin{exercice}{}/
+	\begin{enumerate}
+	\item 
+أحسب الطاقة الحركیة في الحالات التالیة :
+	\begin{enumerate}
+	\item حركة نوترون كتلته
+	$m_n = 1,67.10^{-27}\ kg$
+	وسرعته
+	$v = 67\ km.s^{-1}$
+	في مفاعل نووي.
+	\item حركة طائرة كتلتھا
+	$m = 150\ t$
+	وسرعتھا
+$v = 900\ km.h^{-1}$.
+\item لكرة القدم كتلتها 
+$m = 430\ g$
+وسرعتها 
+$v=72\ km.h^{-1}$.
+\end{enumerate}
+\item يتحرك قطار كتلته 
+$m=4.10^{5}\ kg$
+على سكة مستقيمية بسرعة 
+$v = 100\ km.h^{-1}$.
+\begin{enumerate}
+\item أحسب الطاقة الحركية للقطار.
+\item إذا استعملنا هذه الطاقة لرفع القطار، إلى أي ارتفاع 
+$h$
+يمكن أن يصل إليه؟
+\end{enumerate}
+\end{enumerate}
+	\end{exercice}%===  ===%
+  %Exercice 5
+					\begin{exercice}{}/
+					تشكل الميكرونيازك خطرا دائما على الرواد ومركباتهم الفضائية.
+\begin{enumerate}
+\item احسب الطاقة الحركية لميكرونيزك كتلته 
+$\bm{m=1\ g}$
+ينتقل بسرعة
+$\bm{v=250\ km.s^{-1}}$.
+\item قارن الطاقة الحركية المحصل عليها والطاقة الحركية 
+لشاحنة كتلتها 
+$\bm{m'=30\ t}$
+تنتقل بسرعة
+$\bm{v=90\ km.h^{-1}}$، واستنتج طبيعة الخطر الذي
+تشكله الميكرونيازك. 
+					\end{enumerate}
+					\end{exercice}%===  ===%
+  %Exercice 1
+					\begin{exercice}{}/
+\begin{enumerate}
+					\item 	نعتبر عارضتين مماثلتين لهما نفس الطول 
+	$L$				
+					ونفس الكتلة 
+	$m$				
+					تدوران بنفس السرعة الزاوية 
+	$\omega$.				
+					\begin{itemize}
+					\item تدور العارضة الأولى حول محور 
+					$(\Delta)$
+					يمر من أحد طرفيها.
+					عزم قصورها 
+					$J_{1}=\dfrac{1}{3}.m.L^{2}$.
+					\item تدور العارضة الثانية حول محور 
+					$(\Delta)$
+					يمر من مركز قصورها.
+					عزم قصورها 
+					$J_{2}=\dfrac{1}{12}.m.L^{2}$.
+					\end{itemize}
+					قارن الطاقتين الحركيتين المكتسبتين من طرف هاتين العارضتين.\\
+\begin{minipage}[c]{0.73\linewidth}
+\item تتكون أسطوانة مفرغة شعاعها الداخلي 
+$R_1=8\ cm$
+وشعاعها الخارجي 
+$R_2=6\ cm$
+من مادة كتلتها الحجمية
+$\rho =4\ g.cm^{-3}$،
+للأسطوانة ارتفاع 
+$h=20\ cm$.
+\\أوجد عزم قصور الأسطوانة المفرغة بالنسبة لمحور تماثلها
+$(\Delta)$
+علما أن عزم قصور أسطوانة مملوءة بالنسبة لمحور تماثلها هو 
+$J_{\Delta}=\dfrac{1}{2}.m.r^{2}$.
+\end{minipage}
+					\begin{minipage}[c]{0.25\linewidth}
+\psset{xunit=.5pt,yunit=.5pt,runit=.5pt}
+\begin{flushleft}
+\begin{adjustbox}{width=0.7\linewidth}
+\fbox{
+\begin{pspicture}(202,267)
+{
+\newrgbcolor{curcolor}{1 0.68627453 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(2,194)
+\lineto(2,53.7)
+\curveto(2,37.3)(46.3,24)(101,24)
+\curveto(155.7,24)(200,37.3)(200,53.7)
+\lineto(200,194)
+\curveto(200,177.6)(155.7,164.3)(101,164.3)
+\curveto(46.3,164.3)(2,177.6)(2,194)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linewidth=2,linecolor=curcolor]
+{
+\newpath
+\moveto(2,194)
+\lineto(2,53.7)
+\curveto(2,37.3)(46.3,24)(101,24)
+\curveto(155.7,24)(200,37.3)(200,53.7)
+\lineto(200,194)
+\curveto(200,177.6)(155.7,164.3)(101,164.3)
+\curveto(46.3,164.3)(2,177.6)(2,194)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{1 0.68627453 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(2,194)
+\curveto(2,210.4)(46.3,223.7)(101,223.7)
+\curveto(155.7,223.7)(200,210.4)(200,194)
+\curveto(200,177.6)(155.7,164.3)(101,164.3)
+\curveto(46.3,164.3)(2,177.6)(2,194)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linewidth=2,linecolor=curcolor]
+{
+\newpath
+\moveto(2,194)
+\curveto(2,210.4)(46.3,223.7)(101,223.7)
+\curveto(155.7,223.7)(200,210.4)(200,194)
+\curveto(200,177.6)(155.7,164.3)(101,164.3)
+\curveto(46.3,164.3)(2,177.6)(2,194)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{1 1 1}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(21.5,194.78)
+\curveto(21.5,205.68)(57.3,214.58)(101.5,214.58)
+\curveto(145.7,214.58)(181.5,205.68)(181.5,194.78)
+\curveto(181.5,183.88)(145.7,174.98)(101.5,174.98)
+\curveto(57.3,174.98)(21.5,183.88)(21.5,194.78)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linewidth=2,linecolor=curcolor]
+{
+\newpath
+\moveto(21.5,194.78)
+\curveto(21.5,205.68)(57.3,214.58)(101.5,214.58)
+\curveto(145.7,214.58)(181.5,205.68)(181.5,194.78)
+\curveto(181.5,183.88)(145.7,174.98)(101.5,174.98)
+\curveto(57.3,174.98)(21.5,183.88)(21.5,194.78)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linewidth=2,linecolor=curcolor,linestyle=dashed,dash=2.5 2.5]
+{
+\newpath
+\moveto(95,194)
+\lineto(95,256)
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(66.453125,231.32421875)
+\lineto(66.453125,230.8203125)
+\curveto(64.4140625,231.8359375)(62.82421875,233.328125)(61.68359375,235.296875)
+\curveto(60.55078125,237.2578125)(59.984375,239.40625)(59.984375,241.7421875)
+\curveto(59.984375,244.171875)(60.58203125,246.3828125)(61.77734375,248.375)
+\curveto(62.97265625,250.375)(64.53125,251.8046875)(66.453125,252.6640625)
+\lineto(66.453125,252.171875)
+\curveto(65.4921875,251.640625)(64.703125,250.9140625)(64.0859375,249.9921875)
+\curveto(63.46875,249.0703125)(63.0078125,247.8984375)(62.703125,246.4765625)
+\curveto(62.3984375,245.0625)(62.24609375,243.5859375)(62.24609375,242.046875)
+\curveto(62.24609375,240.3046875)(62.38671875,238.73046875)(62.66796875,237.32421875)
+\curveto(62.94921875,235.91796875)(63.37890625,234.75390625)(63.95703125,233.83203125)
+\curveto(64.53515625,232.90234375)(65.3671875,232.06640625)(66.453125,231.32421875)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(81.3828125,236)
+\lineto(67.3203125,236)
+\lineto(74.6796875,252.25390625)
+\closepath
+\moveto(78.6171875,236.9609375)
+\lineto(73.94140625,248.29296875)
+\lineto(68.78515625,236.9609375)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(82.21484375,252.171875)
+\lineto(82.21484375,252.6640625)
+\curveto(84.25390625,251.65625)(85.83984375,250.16796875)(86.97265625,248.19921875)
+\curveto(88.11328125,246.23828125)(88.68359375,244.08984375)(88.68359375,241.75390625)
+\curveto(88.68359375,239.32421875)(88.0859375,237.109375)(86.890625,235.109375)
+\curveto(85.6953125,233.109375)(84.13671875,231.6796875)(82.21484375,230.8203125)
+\lineto(82.21484375,231.32421875)
+\curveto(83.18359375,231.85546875)(83.9765625,232.58203125)(84.59375,233.50390625)
+\curveto(85.2109375,234.42578125)(85.66796875,235.59375)(85.96484375,237.0078125)
+\curveto(86.26953125,238.421875)(86.421875,239.90234375)(86.421875,241.44921875)
+\curveto(86.421875,243.18359375)(86.28125,244.75390625)(86,246.16015625)
+\curveto(85.7265625,247.57421875)(85.296875,248.7421875)(84.7109375,249.6640625)
+\curveto(84.1328125,250.59375)(83.30078125,251.4296875)(82.21484375,252.171875)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linewidth=1.99699775,linecolor=curcolor]
+{
+\newpath
+\moveto(95,195)
+\lineto(170.933,185.029)
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linewidth=1.99849944,linecolor=curcolor]
+{
+\newpath
+\moveto(95,195)
+\lineto(38.972,171.249)
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linewidth=2,linecolor=curcolor,linestyle=dashed,dash=2.5 2.5]
+{
+\newpath
+\moveto(101,10)
+\lineto(101,24)
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(132.7578125,192.08)
+\lineto(132.7578125,209.2596875)
+\lineto(140.05859375,209.2596875)
+\curveto(141.89453125,209.2596875)(143.2265625,209.1034375)(144.0546875,208.7909375)
+\curveto(144.890625,208.48625)(145.55859375,207.939375)(146.05859375,207.1503125)
+\curveto(146.55859375,206.36125)(146.80859375,205.45890625)(146.80859375,204.44328125)
+\curveto(146.80859375,203.15421875)(146.4296875,202.0878125)(145.671875,201.2440625)
+\curveto(144.9140625,200.408125)(143.78125,199.88078125)(142.2734375,199.66203125)
+\curveto(143.0234375,199.22453125)(143.640625,198.7440625)(144.125,198.220625)
+\curveto(144.6171875,197.6971875)(145.27734375,196.7675)(146.10546875,195.4315625)
+\lineto(148.203125,192.08)
+\lineto(144.0546875,192.08)
+\lineto(141.546875,195.81828125)
+\curveto(140.65625,197.15421875)(140.046875,197.9940625)(139.71875,198.3378125)
+\curveto(139.390625,198.689375)(139.04296875,198.92765625)(138.67578125,199.05265625)
+\curveto(138.30859375,199.18546875)(137.7265625,199.251875)(136.9296875,199.251875)
+\lineto(136.2265625,199.251875)
+\lineto(136.2265625,192.08)
+\closepath
+\moveto(136.2265625,201.9940625)
+\lineto(138.79296875,201.9940625)
+\curveto(140.45703125,201.9940625)(141.49609375,202.064375)(141.91015625,202.205)
+\curveto(142.32421875,202.345625)(142.6484375,202.5878125)(142.8828125,202.9315625)
+\curveto(143.1171875,203.2753125)(143.234375,203.705)(143.234375,204.220625)
+\curveto(143.234375,204.79875)(143.078125,205.26359375)(142.765625,205.61515625)
+\curveto(142.4609375,205.97453125)(142.02734375,206.20109375)(141.46484375,206.29484375)
+\curveto(141.18359375,206.33390625)(140.33984375,206.3534375)(138.93359375,206.3534375)
+\lineto(136.2265625,206.3534375)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(154.4832029,182.38000019)
+\lineto(152.34277329,182.38000019)
+\lineto(152.34277329,190.44660146)
+\curveto(151.56074207,189.71535148)(150.63906242,189.17453119)(149.57773433,188.82414058)
+\lineto(149.57773433,190.76652332)
+\curveto(150.13632806,190.94933581)(150.74316397,191.2946483)(151.39824208,191.80246078)
+\curveto(152.05332018,192.31535139)(152.50273422,192.91203105)(152.74648421,193.59249978)
+\lineto(154.4832029,193.59249978)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(49.2478125,190.08)
+\lineto(49.2478125,207.2596875)
+\lineto(56.54859375,207.2596875)
+\curveto(58.38453125,207.2596875)(59.7165625,207.1034375)(60.5446875,206.7909375)
+\curveto(61.380625,206.48625)(62.04859375,205.939375)(62.54859375,205.1503125)
+\curveto(63.04859375,204.36125)(63.29859375,203.45890625)(63.29859375,202.44328125)
+\curveto(63.29859375,201.15421875)(62.9196875,200.0878125)(62.161875,199.2440625)
+\curveto(61.4040625,198.408125)(60.27125,197.88078125)(58.7634375,197.66203125)
+\curveto(59.5134375,197.22453125)(60.130625,196.7440625)(60.615,196.220625)
+\curveto(61.1071875,195.6971875)(61.76734375,194.7675)(62.59546875,193.4315625)
+\lineto(64.693125,190.08)
+\lineto(60.5446875,190.08)
+\lineto(58.036875,193.81828125)
+\curveto(57.14625,195.15421875)(56.536875,195.9940625)(56.20875,196.3378125)
+\curveto(55.880625,196.689375)(55.53296875,196.92765625)(55.16578125,197.05265625)
+\curveto(54.79859375,197.18546875)(54.2165625,197.251875)(53.4196875,197.251875)
+\lineto(52.7165625,197.251875)
+\lineto(52.7165625,190.08)
+\closepath
+\moveto(52.7165625,199.9940625)
+\lineto(55.28296875,199.9940625)
+\curveto(56.94703125,199.9940625)(57.98609375,200.064375)(58.40015625,200.205)
+\curveto(58.81421875,200.345625)(59.1384375,200.5878125)(59.3728125,200.9315625)
+\curveto(59.6071875,201.2753125)(59.724375,201.705)(59.724375,202.220625)
+\curveto(59.724375,202.79875)(59.568125,203.26359375)(59.255625,203.61515625)
+\curveto(58.9509375,203.97453125)(58.51734375,204.20109375)(57.95484375,204.29484375)
+\curveto(57.67359375,204.33390625)(56.82984375,204.3534375)(55.42359375,204.3534375)
+\lineto(52.7165625,204.3534375)
+\closepath
+}
+}
+{
+\newrgbcolor{curcolor}{0 0 0}
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=curcolor]
+{
+\newpath
+\moveto(72.72515596,182.36808606)
+\lineto(72.72515596,180.38000019)
+\lineto(65.22222655,180.38000019)
+\curveto(65.30347655,181.13156266)(65.54722654,181.84250014)(65.95347652,182.51281261)
+\curveto(66.35972651,183.18820321)(67.16207023,184.08195318)(68.36050768,185.19406251)
+\curveto(69.3253514,186.09289061)(69.91695294,186.70226558)(70.13531231,187.02218745)
+\curveto(70.42984354,187.46398431)(70.57710916,187.90070304)(70.57710916,188.33234365)
+\curveto(70.57710916,188.80968738)(70.44761698,189.17531237)(70.18863262,189.42921861)
+\curveto(69.93472638,189.68820297)(69.5817967,189.81769516)(69.12984359,189.81769516)
+\curveto(68.68296861,189.81769516)(68.32749987,189.68312485)(68.06343738,189.41398423)
+\curveto(67.79937489,189.14484362)(67.64703115,188.69796864)(67.60640615,188.07335928)
+\lineto(65.47359373,188.28664053)
+\curveto(65.60054685,189.46476548)(65.99917964,190.31027326)(66.66949212,190.82316387)
+\curveto(67.3398046,191.33605448)(68.17769519,191.59249978)(69.1831639,191.59249978)
+\curveto(70.28511699,191.59249978)(71.15093727,191.29542948)(71.78062475,190.70128887)
+\curveto(72.41031222,190.10714827)(72.72515596,189.36828111)(72.72515596,188.48468739)
+\curveto(72.72515596,187.98195304)(72.63374971,187.50207024)(72.45093722,187.04503901)
+\curveto(72.27320285,186.5930859)(71.98882786,186.11828123)(71.59781225,185.620625)
+\curveto(71.33882789,185.29054689)(70.8716404,184.81574222)(70.1962498,184.19621099)
+\curveto(69.5208592,183.57667976)(69.09175766,183.16535165)(68.90894516,182.96222666)
+\curveto(68.73121079,182.75910167)(68.58648424,182.5610548)(68.47476549,182.36808606)
+\closepath
+}
+}
+\end{pspicture}}
+\end{adjustbox}
+\end{flushleft}
+					\end{minipage} 
+\end{enumerate}	
+	\end{exercice}%===  ===%  
+  
+\end{document}
