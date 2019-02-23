@@ -20,7 +20,7 @@
 		\usepackage{enumitem}
 		\usepackage{graphicx} %table
 		\usepackage{diagbox}
-		\usepackage[left=0.75cm,right=0.75cm,top=0.5cm,bottom=0.75cm,includehead,includefoot]{geometry}
+		\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,includehead,includefoot]{geometry}
 		\usepackage{xcolor}
 		\usepackage{polyglossia}
 		\usepackage{graphicx}
@@ -33,15 +33,24 @@
 		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
 		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
 		\newtcbtheorem[auto counter]{exercice}%
-		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 1 mm ,
-			arc=0mm, colback=white!5!white,colframe=black!50!black}{theorem}
-			%Solution ==================================================
+		{\textbf{تمرين}}{enhanced jigsaw,breakable,before skip=0mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 2 mm ,
+		attach boxed title to top right={xshift=-1cm,yshift=-3mm},
+		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
+		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
+		interior style={top color=white!10!white,bottom color=blue!10!white},
+		boxed title style={boxrule=0.3mm,colframe=white,
+		borderline={0.1mm}{0mm}{blue!50!black},
+		borderline={0.1mm}{0.4mm}{blue!50!black},
+		interior style={top color=white!10!white,bottom color=white!10!white,
+		middle color=blue!10!white},
+		drop fuzzy shadow,arc=0mm},arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		%Solution ==================================================
 		\newtcbtheorem[]{solution}%
 		{\textbf{حل التمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
 		attach boxed title to top center={xshift=0cm,yshift=-3.7mm},
 		fonttitle=\bfseries,varwidth boxed title=0.7\linewidth,
 		colbacktitle=white!45!white,coltitle=white!10!black,colframe=white!50!black,
-		interior style={top color=white!10!white,bottom color=white!10!white},
+		interior style={top color=white!10!white,bottom color=blue!10!white},
 		boxed title style={boxrule=0.5mm,
 		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
 		-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
@@ -55,6 +64,7 @@
 		\setlength{\columnseprule}{1pt}
 		\def\columnseprulecolor{\color{blue}}
 		\titlespacing{\section}{0pt}{0pt}{0pt}
+		\titlespacing{\section}{0pt}{0pt}{0pt}
 		\pagestyle{fancy}
 		\cfoot{\thepage}
 		%\rfoot{}
@@ -67,49 +77,15 @@
         \node[shape=rectangle,left color=color1!60!black,right color=color1!60!black,
 		middle color=color1!80!black,draw,inner sep=1pt] (char) {#1};}}
 		\lfoot{السنة الدراسية : 
-  }
-\lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  }
-\rhead{الثانوية التأهيلية  : \\المستوى الدراسي  :  }
+  2018/2019}
+\lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  نايت الياس عبد الكبير}
+\rhead{الثانوية التأهيلية  : وادي الدهب  \\المستوى الدراسي  :  الاولى باك 6}
 \rfoot{قياس المواصلة  }
-\lfoot{}
+\lfoot{الاولى باك 6}
  \chead{\centering سلسلة تمارين\\ 
 قياس المواصلة  }
 \begin{document}
   
-  %Exercice 1
-					\textbf{\begin{exercice}{}/
-أنجز عملية التحويل الى الوحدة المطلوبة في كل من الحالات التالية :
-\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
-\vspace{-0.3cm}
-\item الموصلية :
-\vspace{-0.2cm}
-\textfrench{
-\begin{itemize}
-\item $\bm{{\sigma = 65,4\ mS.m^{-1} =}}$ \dotfill $\bm{{\ S.m^{-1}}}$
-\item $\bm{{\sigma = 26,7.10^{-2}\ S.cm^{-1} = }}$ \dotfill $\bm{{\  S.m^{-1}}}$
-\item $\bm{{\sigma = 65,4.10^{-1}\ \mu S.cm^{-1} = }}$ \dotfill $\bm{{\  S.m^{-1}}}$
-\vspace{-1cm}
-\end{itemize}}
-\item الموصلية المولية الأيونية :
-\vspace{-0.2cm}
-\textfrench{
-\begin{itemize}
-\item $\bm{{\lambda = 78,5.10^{-2}\ S.m^{2}.mol^{-1} = }}$ \dotfill $\bm{{\  mS.m^{2}.mol^{-1}}}$
-\item $\bm{{\lambda = 5,7.10^{3}\ \mu S.m^{2}.mol^{-1} = }}$ \dotfill $\bm{{\  S.m^{2}.mol^{-1}}}$
-\item $\bm{{\lambda = 19,5\ mS.m^{2}.mol^{-1} = }}$ \dotfill $\bm{{\  S.m^{2}.mol^{-1}}}$
-\end{itemize}
-\vspace{-1cm}
-}
-\item التركيز المولي :
-\vspace{-0.2cm}
-\textfrench{
-\begin{itemize}
-\item $\bm{{C = 1,3.10^{-2}\ mol.L^{-1} = }}$ \dotfill $\bm{{\  mol.m^{-3}}}$
-\item $\bm{{C = 78,5\ mmol.m^{-3} = }}$ \dotfill $\bm{{\  mol.L^{-1}}}$
-\item $\bm{{C = 6,5.10^{-2}\ mmol.dm^{-3} = }}$ \dotfill $\bm{{\  mol.m^{-3}}}$
-\end{itemize}}
-\end{enumerate}
-					\end{exercice}}%===  ===%  
   %Exercice 2
 					\textbf{\begin{exercice}{}/
 تتكون خلية مواصلة من إلكترودين مساحة كل منهما 
@@ -160,6 +136,40 @@ ${\lambda _{Cl^-} =7,6.10^{-3}\ S.m^{2}.mol^{-1}}$.
 و
 ${\lambda _{NH_4^+} =7,4.10^{-3}\ S.m^{2}.mol^{-1}}$
 	\end{exercice}}%===  ===% 
+  %Exercice 1
+					\textbf{\begin{exercice}{}/
+أنجز عملية التحويل الى الوحدة المطلوبة في كل من الحالات التالية :
+\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+\vspace{-0.3cm}
+\item الموصلية :
+\vspace{-0.2cm}
+\textfrench{
+\begin{itemize}
+\item $\bm{{\sigma = 65,4\ mS.m^{-1} =}}$ \dotfill $\bm{{\ S.m^{-1}}}$
+\item $\bm{{\sigma = 26,7.10^{-2}\ S.cm^{-1} = }}$ \dotfill $\bm{{\  S.m^{-1}}}$
+\item $\bm{{\sigma = 65,4.10^{-1}\ \mu S.cm^{-1} = }}$ \dotfill $\bm{{\  S.m^{-1}}}$
+\vspace{-1cm}
+\end{itemize}}
+\item الموصلية المولية الأيونية :
+\vspace{-0.2cm}
+\textfrench{
+\begin{itemize}
+\item $\bm{{\lambda = 78,5.10^{-2}\ S.m^{2}.mol^{-1} = }}$ \dotfill $\bm{{\  mS.m^{2}.mol^{-1}}}$
+\item $\bm{{\lambda = 5,7.10^{3}\ \mu S.m^{2}.mol^{-1} = }}$ \dotfill $\bm{{\  S.m^{2}.mol^{-1}}}$
+\item $\bm{{\lambda = 19,5\ mS.m^{2}.mol^{-1} = }}$ \dotfill $\bm{{\  S.m^{2}.mol^{-1}}}$
+\end{itemize}
+\vspace{-1cm}
+}
+\item التركيز المولي :
+\vspace{-0.2cm}
+\textfrench{
+\begin{itemize}
+\item $\bm{{C = 1,3.10^{-2}\ mol.L^{-1} = }}$ \dotfill $\bm{{\  mol.m^{-3}}}$
+\item $\bm{{C = 78,5\ mmol.m^{-3} = }}$ \dotfill $\bm{{\  mol.L^{-1}}}$
+\item $\bm{{C = 6,5.10^{-2}\ mmol.dm^{-3} = }}$ \dotfill $\bm{{\  mol.m^{-3}}}$
+\end{itemize}}
+\end{enumerate}
+					\end{exercice}}%===  ===%  
   %Exercice 4
 					\textbf{\begin{exercice}{}/
 نطبق على خلية قياس المواصلة، مغمورة كليا داخل محلول إلكتروليتي، توترا متناوبا جيبيا ذي تردد 
@@ -180,40 +190,6 @@ $L=1,50\ cm$،
 ومساحة كل إلكترود 
 $120\ mm^2$.
 					\end{exercice}}%=== source ===%
-  %Exercice 5
-					\textbf{\begin{exercice}{}/
-نحصل على محلول مائي
-$(S)$
-لكلورور الصوديوم بإذابة كتلة
-${m=11,76\ mg}$
-من كلورور الصوديوم في حجم 
-${V=200\ cm^3}$
-من الماء.
-\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
-\item أحسب
-$C$
-التركيز المولي للمحلول
-$(S)$.
-\item أحسب
-$\sigma$
-موصلية المحلول
-$(S)$.
-\item أحسب
-$G$
-مواصلة جزء المحلول
-$(S)$
-المغمور بين صفيحتي خلية المواصلة الذي مساحته الخارجية
-$S=5\ cm^{2}$
-و طوله
-$L=2\ cm$.
-\end{enumerate}
-\textbf{نعطي:}\\
-${\lambda _{Na^+} =5,0.10^{-3}\ S.m^{2}.mol^{-1}}$
-و
-${\lambda _{Cl^-} =7,6.10^{-3}\ S.m^{2}.mol^{-1}}$
-و
-${M(NaCl)=58,5\ g.mol^{-1}}$
-\end{exercice}}%=== source ===% 
   %Exercice 6
 					\textbf{\begin{exercice}{}/
 نحضر 
@@ -273,6 +249,40 @@ $I=2$.
 \item إستنتج مواصلة جزء المحلول المحصور بين الالكترودين؟
 \end{enumerate}
 \end{exercice}}%=== source ===%  
+  %Exercice 5
+					\textbf{\begin{exercice}{}/
+نحصل على محلول مائي
+$(S)$
+لكلورور الصوديوم بإذابة كتلة
+${m=11,76\ mg}$
+من كلورور الصوديوم في حجم 
+${V=200\ cm^3}$
+من الماء.
+\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+\item أحسب
+$C$
+التركيز المولي للمحلول
+$(S)$.
+\item أحسب
+$\sigma$
+موصلية المحلول
+$(S)$.
+\item أحسب
+$G$
+مواصلة جزء المحلول
+$(S)$
+المغمور بين صفيحتي خلية المواصلة الذي مساحته الخارجية
+$S=5\ cm^{2}$
+و طوله
+$L=2\ cm$.
+\end{enumerate}
+\textbf{نعطي:}\\
+${\lambda _{Na^+} =5,0.10^{-3}\ S.m^{2}.mol^{-1}}$
+و
+${\lambda _{Cl^-} =7,6.10^{-3}\ S.m^{2}.mol^{-1}}$
+و
+${M(NaCl)=58,5\ g.mol^{-1}}$
+\end{exercice}}%=== source ===% 
   %Exercice 8
 					\textbf{\begin{exercice}{}/
 	تم تحضير محلول مخفف لحمض النتريك
