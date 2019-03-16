@@ -20,21 +20,24 @@
 		\usepackage{enumitem}
 		\usepackage{graphicx} %table
 		\usepackage{diagbox}
-		\usepackage[left=0.75cm,right=0.75cm,top=0.5cm,bottom=0.75cm,includehead,includefoot]{geometry}
+		\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,includehead,includefoot]{geometry}
 		\usepackage{xcolor}
 		\usepackage{polyglossia}
 		\usepackage{graphicx}
 		\usepackage[most]{tcolorbox}
+		\usepackage{varwidth}
 		\usepackage{titlesec}
+		\usepackage{enumitem}
 		\usepackage{fancyhdr} % Mise en page, en-tête et pied de page
-		\usepackage[a4,frame,center]{crop}
 		\setdefaultlanguage[calendar=gregorian,numerals=maghrib]{arabic}
 		\setotherlanguage{french}
 		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
 		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
+		\author{نايت الياس}
+		\setlist[enumerate]{itemsep=0mm}
 		\newtcbtheorem[auto counter]{exercice}%
-		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 1 mm ,
-			arc=0mm, colback=white!5!white,colframe=black!50!black}{theorem}
+		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 2 mm ,
+			arc=0mm, colback=white!5!white,colframe=black,attach boxed title to top right={yshift=-3mm,xshift=-5mm},colbacktitle=white!20!white,sharpish corners,coltitle=black!40!black}{theorem}
 			%Solution ==================================================
 		\newtcbtheorem[]{solution}%
 		{\textbf{حل التمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
@@ -50,10 +53,30 @@
 		-- (interior.north west) -- (interior.north east)
 		-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
 		-- cycle;} }
-		,arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		,arc=0mm, colback=white!5!white,colframe=black!50!white}{theorem}
 		%============================================================
 		\setlength{\columnseprule}{1pt}
-		\def\columnseprulecolor{\color{blue}}
+		\def\columnseprulecolor{\color{black}}
+		\titlespacing{\section}{0pt}{0pt}{0pt}
+		\NewTColorBox[auto counter]{exercises}{+O{}}{%
+		enhanced,colframe=green!20!black,colback=yellow!10!white,coltitle=green!40!black,
+		fonttitle=\bfseries,
+		underlay={\begin{tcbclipinterior}
+		\shade[inner color=green!80!yellow,outer color=yellow!10!white]
+		(interior.north west) circle (2cm);
+		\draw[help lines,step=5mm,yellow!80!black,shift={(interior.north west)}]
+		(interior.south west) grid (interior.north east);
+		\end{tcbclipinterior}},
+		title={Exercise~\thetcbcounter:},
+		label={exercise@\thetcbcounter},
+		attach title to upper=\quad,
+		after upper={\par\hfill\textcolor{green!40!black}%
+		{\itshape Solution on page~\pageref{solution@\thetcbcounter}}},
+		lowerbox=ignored,
+		savelowerto=solutions/exercise-\thetcbcounter.tex,
+		record={\string\solution{\thetcbcounter}{solutions/exercise-\thetcbcounter.tex}},
+		#1
+		}		
 		\titlespacing{\section}{0pt}{0pt}{0pt}
 		\pagestyle{fancy}
 		\cfoot{\thepage}
@@ -66,16 +89,53 @@
 		\newcommand*\rectled[1]{\tikz[baseline=(char.base)]{%
         \node[shape=rectangle,left color=color1!60!black,right color=color1!60!black,
 		middle color=color1!80!black,draw,inner sep=1pt] (char) {#1};}}
-		\lfoot{السنة الدراسية : 
-  }
-\lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  }
-\rhead{الثانوية التأهيلية  : \\المستوى الدراسي  :  }
+		\lfoot{السنة الدراسية :  
+  2018/2019}
+\lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  برامي  }
+\rhead{الثانوية التأهيلية  : محمد \\المستوى الدراسي  :  الاولى باك ع ت1 }
 \rfoot{التجاذب الكوني}
-\lfoot{}
+\lfoot{الاولى باك ع ت1 }
  \chead{\centering سلسلة تمارين\\ 
 التجاذب الكوني}
 \begin{document}
   
+  %Exercice 5
+\textbf{\begin{exercice}{}/
+					اختر الجواب الصحيح :
+					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+					\item قوة التجاذب الكوني المطبقة من طرف الأرض على القمر أكبر شدة من قوة التجاذب الكوني المطبقة من طرف القمر على الأرض:
+					\begin{itemize}[label=$\square$]
+					\item صحيح.
+					\item خطأ.
+					\end{itemize}
+					\item شدة قوة التجاذب الكوني المطبقة بين جسمين تتناسب مع جذاء كتلتيهما :  
+					\begin{itemize}[label=$\square$]
+					\item صحيح.
+					\item خطأ.
+					\end{itemize}
+					\item إذا تضاعفت المسافة بين جسمين نقطيين، فإن 
+					$F$
+					شدة قوة التجاذب الكوني المطبقة بينهما تصير :
+					\begin{itemize}[label=$\square$]
+					\item $2F$.
+					\item $\dfrac{F}{2}$.
+					\item $4F$.
+					\item $\dfrac{F}{4}$.
+					\end{itemize}
+					\item وزن شخص على سطح القمر يختلف عن وزنه على سطح الارض لأن :
+					\begin{itemize}[label=$\square$]
+					\item الشخص بعيدا جدا عن الأرض.
+					\item كتلة وشعاع القمر يختلفان عن كتلة وشعاع الارض.
+					\item كتلة الشخص تغيرت.
+					\end{itemize}
+					\item بجوار الأرض، جسم لا يسقط على الأرض لأنه :
+					\begin{itemize}[label=$\square$]
+					\item لا يخضع لقوة التجاذب الكوني المطبقة من طرف الأرض.
+					\item يخضع لقوة ثانية متعادلة مع قوة التجاذب الكوني المطبقة من طرف الأرض.
+					\item في مدار حول الأرض.
+					\end{itemize}
+					\end{enumerate}
+					\end{exercice}}%=== source ===%
   %Exercice 2
 \textbf{\begin{exercice}{}/
 					عبر عن الأطوال التالية بالكتابة العلمية :\\			
@@ -98,77 +158,29 @@
 						\end{itemize}}
 					\end{minipage}
 					\end{exercice}}%=== source ===%
-  %Exercice 3
+  %Exercice 7
 \textbf{\begin{exercice}{}/
-					كرتان مماثلتان ذات الكتلة 
-					$\bm{m_A=m_B=100\ kg}$
-					تفصل بينهما مسافة 
-					$\bm{d=1m}$
-					توجدان على سطح الأرض.
-\begin{minipage}[c]{0.59\linewidth}
-\indent					
-					\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
-					\item أحسب شدة قوة التجاذب الكوني التي تسلطها الكرة على الأخرى.
-					\item أحسب شدة قوة التجاذب الكوني التي تسلطها الأرض على إحدى الكرتين.
-					\item  قارن بين هاتين الشدتين ماذا تستنتج؟
-					\end{enumerate}
-					\vspace{0.3cm}
-\end{minipage}
-					\begin{minipage}[c]{0.39\linewidth}
-					\definecolor{cffffff}{RGB}{255,255,255}
-\definecolor{cee7c31}{RGB}{238,124,49}
-\definecolor{c3498db}{RGB}{52,152,219}
-\begin{flushleft}
-\begin{adjustbox}{width=\linewidth}
-\fbox{
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-\begin{scope}[shift={(-334.0,-793.5)}]
-  \path[shift={(335.0,798.0)},draw=black,fill=cffffff] (0.0000,0.0000) --
-    (397.0000,0.0000) -- (397.0000,156.0000) -- (0.0000,156.0000) --
-    (0.0000,0.0000) -- cycle;
-  \path[shift={(348.61,833.0)},draw=black,fill=cffffff,line width=1.600pt]
-    (0.0000,50.0000) .. controls (0.0000,22.4000) and (22.4000,0.0000) ..
-    (50.0000,0.0000) .. controls (77.6000,0.0000) and (100.0000,22.4000) ..
-    (100.0000,50.0000) .. controls (100.0000,77.6000) and (77.6000,100.0000) ..
-    (50.0000,100.0000) .. controls (22.4000,100.0000) and (0.0000,77.6000) ..
-    (0.0000,50.0000) -- cycle;
-  \begin{scope}[shift={(350.0,933.0)}]
-    \path[draw=cffffff,fill=cee7c31,line width=1.600pt] (0.0000,0.0000) --
-      (363.0000,0.0000) -- (363.0000,12.0000) -- (0.0000,12.0000) -- (0.0000,0.0000)
-      -- cycle;
-    \path[shift={(2.14,0)},draw=black,line width=1.600pt] (0.0000,0.0000) --
-      (360.9000,0.0000);
-  \end{scope}
-  \path[shift={(616.0,833.0)},draw=black,fill=cffffff,line width=1.600pt]
-    (0.0000,50.0000) .. controls (0.0000,22.4000) and (22.4000,0.0000) ..
-    (50.0000,0.0000) .. controls (77.6000,0.0000) and (100.0000,22.4000) ..
-    (100.0000,50.0000) .. controls (100.0000,77.6000) and (77.6000,100.0000) ..
-    (50.0000,100.0000) .. controls (22.4000,100.0000) and (0.0000,77.6000) ..
-    (0.0000,50.0000) -- cycle;
-  \begin{scope}[shift={(397.0,883.0)}]
-    \path[draw=black,dash pattern=on 4.80pt off 3.20pt,line width=1.600pt]
-      (2.0000,0.0000) -- (267.0000,0.0000);
-    \path[draw=black,line join=round,line cap=round,line width=1.600pt]
-      (8.5000,4.2000) -- (0.0000,0.0000) -- (8.5000,-4.2000);
-    \path[draw=black,line join=round,line cap=round,line width=1.600pt]
-      (260.5000,-4.2000) -- (269.0000,0.0000) -- (260.5000,4.2000);
-  \end{scope}
-  \begin{scope}[shift={(628.0,803.0)}]
-    \path (38,9.5) node[] (text29) {\Large \textbf{$\bm{B}$ كرة }};
-  \end{scope}
-  \begin{scope}[shift={(360.61,803.0)}]
-    \path (38,9.5) node[] (text29) {\Large \textbf{$\bm{A}$ كرة}};
-  \end{scope}
-  \begin{scope}[shift={(493.5,855.0)}]
-    \path (38,9.5) node[] (text29) {\Large \textbf{$\bm{d}$}};
-  \end{scope}
-\end{scope}
-\end{tikzpicture}}
-\end{adjustbox}
-\end{flushleft}
+					إعط رتبة قدر الأعداد التالية :\\
+					\begin{minipage}[c]{0.5\linewidth}
+					\vspace{-0.3cm}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{ n_1=94= }\dotfill$
+							\item $\bm{ n_2=0.0018= }\dotfill$
+							\item $\bm{n_3=3.10^{2}= }\dotfill$
+						\end{itemize}}
 					\end{minipage}
-					نعطي : ثابتة التجاذب الكوني 
-					$\bm{G=6,67.10^{-11}\ N.m^2.kg^{-1}}\hrulefill$
+					\begin{minipage}[c]{0.5\linewidth}
+					\vspace{-0.3cm}
+					\indent
+					\textfrench{
+						\begin{itemize}
+							\item $\bm{n_4=8,7.10^{-3}=}\dotfill$
+							\item $\bm{ n_5=7= }\dotfill$
+							\item $\bm{ n_6=0= }\dotfill$
+						\end{itemize}}
+					\end{minipage}
 					\end{exercice}}%=== source ===%
   
 \end{document}
