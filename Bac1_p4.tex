@@ -20,21 +20,24 @@
 		\usepackage{enumitem}
 		\usepackage{graphicx} %table
 		\usepackage{diagbox}
-		\usepackage[left=0.75cm,right=0.75cm,top=0.5cm,bottom=0.75cm,includehead,includefoot]{geometry}
+		\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,includehead,includefoot]{geometry}
 		\usepackage{xcolor}
 		\usepackage{polyglossia}
 		\usepackage{graphicx}
 		\usepackage[most]{tcolorbox}
+		\usepackage{varwidth}
 		\usepackage{titlesec}
+		\usepackage{enumitem}
 		\usepackage{fancyhdr} % Mise en page, en-tête et pied de page
-		\usepackage[a4,frame,center]{crop}
 		\setdefaultlanguage[calendar=gregorian,numerals=maghrib]{arabic}
 		\setotherlanguage{french}
 		\newfontfamily\arabicfont[Script=Arabic,Scale=1]{Amiri}
 		\newfontfamily\arabicfontsf[Script=Arabic,Scale=1]{Amiri}
+		\author{نايت الياس}
+		\setlist[enumerate]{itemsep=0mm}
 		\newtcbtheorem[auto counter]{exercice}%
-		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 1 mm ,
-			arc=0mm, colback=white!5!white,colframe=black!50!black}{theorem}
+		{\textbf{تمرين}}{enhanced jigsaw,breakable,fonttitle=\bfseries\upshape,before skip=1mm,after skip=1mm,/tcb/bottom= 1 mm ,/tcb/top= 2 mm ,
+			arc=0mm, colback=white!5!white,colframe=black,attach boxed title to top right={yshift=-3mm,xshift=-5mm},colbacktitle=white!20!white,sharpish corners,coltitle=black!40!black}{theorem}
 			%Solution ==================================================
 		\newtcbtheorem[]{solution}%
 		{\textbf{حل التمرين}}{enhanced jigsaw,breakable,/tcb/top=4mm,before skip=1mm,after skip=1mm,
@@ -50,10 +53,30 @@
 		-- (interior.north west) -- (interior.north east)
 		-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
 		-- cycle;} }
-		,arc=0mm, colback=white!5!white,colframe=blue!50!white}{theorem}
+		,arc=0mm, colback=white!5!white,colframe=black!50!white}{theorem}
 		%============================================================
 		\setlength{\columnseprule}{1pt}
-		\def\columnseprulecolor{\color{blue}}
+		\def\columnseprulecolor{\color{black}}
+		\titlespacing{\section}{0pt}{0pt}{0pt}
+		\NewTColorBox[auto counter]{exercises}{+O{}}{%
+		enhanced,colframe=green!20!black,colback=yellow!10!white,coltitle=green!40!black,
+		fonttitle=\bfseries,
+		underlay={\begin{tcbclipinterior}
+		\shade[inner color=green!80!yellow,outer color=yellow!10!white]
+		(interior.north west) circle (2cm);
+		\draw[help lines,step=5mm,yellow!80!black,shift={(interior.north west)}]
+		(interior.south west) grid (interior.north east);
+		\end{tcbclipinterior}},
+		title={Exercise~\thetcbcounter:},
+		label={exercise@\thetcbcounter},
+		attach title to upper=\quad,
+		after upper={\par\hfill\textcolor{green!40!black}%
+		{\itshape Solution on page~\pageref{solution@\thetcbcounter}}},
+		lowerbox=ignored,
+		savelowerto=solutions/exercise-\thetcbcounter.tex,
+		record={\string\solution{\thetcbcounter}{solutions/exercise-\thetcbcounter.tex}},
+		#1
+		}		
 		\titlespacing{\section}{0pt}{0pt}{0pt}
 		\pagestyle{fancy}
 		\cfoot{\thepage}
@@ -66,16 +89,62 @@
 		\newcommand*\rectled[1]{\tikz[baseline=(char.base)]{%
         \node[shape=rectangle,left color=color1!60!black,right color=color1!60!black,
 		middle color=color1!80!black,draw,inner sep=1pt] (char) {#1};}}
-		\lfoot{السنة الدراسية : 
-  2019  }
-\lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  hadaoui  }
-\rhead{الثانوية التأهيلية  : lycee \\المستوى الدراسي  :  1BAC  }
+		\lfoot{السنة الدراسية :  
+  2018/2019}
+\lhead{مادة : الفيزياء والكيمياء\\الأستاذ :  بوعسرية }
+\rhead{الثانوية التأهيلية  : \\المستوى الدراسي  :  الأولى باك  }
 \rfoot{طاقة الوضع الثقالية والطاقة الميكانيكية }
-\lfoot{1BAC  }
+\lfoot{الأولى باك  }
  \chead{\centering سلسلة تمارين\\ 
 طاقة الوضع الثقالية والطاقة الميكانيكية }
 \begin{document}
   
+  %Exercice 1
+					\begin{exercice}{}/
+					نضع علبة كتلتها 
+$\bm{m=1\ kg}$
+فوق طاولة كما يبين الشكل جانبه :\\
+\begin{minipage}{0.6\linewidth}
+أحسب طاقة الوضع الثقالية للعلبة في الحالات التالية :
+\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+\item عند اختيار سطح الأرض كحالة مرجعية.
+\item عند اختيار سطح الطاولة كحالة مرجعية.
+\item عند اختيار 
+$\bm{z_0 = 2\ m}$
+كحالة مرجعية.
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\begin{flushleft}\begin{adjustbox}{width=0.95\linewidth}
+\fbox{\begin{tikzpicture}
+\fill[white]  (-12,-1) rectangle (3,9);
+\draw [help lines, line width = 1pt,color=orange,step=1cm] (-12,-1) grid (3,9);
+\draw[->,line width = 2pt] (-10.5,0) node (v1) {} -- (-10.5,8);
+\node[left] at (2,6) {\Large{\textarabic{العلبة}}};
+\node[left] at (2,5) {\Large{\textarabic{الطاولة}}};
+\node at (-10.8,3) {\Large{$\bm{1\ -}$}};
+%\node at (-10.93,4) {\Large{$\bm{40\ -}$}};
+\node at (-10.8,0) {\Large{$\bm{0\ -}$}};
+\node at (-10.8,6) {\Large{$\bm{2\ -}$}};
+\node at (-9.5,8) {\Large{$\bm{Z(m)}$}};
+\draw  (-12,9) rectangle (3,-1);
+\fill (v1) rectangle (2,-0.5);
+\fill[brown] (-7,0) rectangle (0,2.5);
+\fill[brown!50!black] (-7.25,3) rectangle (0.25,2.5);
+\fill[gray] (-4.5,3) rectangle (-3,4);
+\draw[ball color=white] (-3.75,3) circle (.1);
+\draw[-,dashed,line width = 2pt] (-10.5,3) to (-3.75,3);
+\draw[->,line width = 2pt] (-0.2,6) to (-3.6,4);
+\draw[->,line width = 2pt] (-0.2,5) to (-2,3);
+\draw[-,line width = 2pt] (-0.2,6) to (0.4,6);
+\draw[-,line width = 2pt] (-0.2,5) to (0.4,5);
+\end{tikzpicture}}
+\end{adjustbox}
+\end{flushleft}
+\end{minipage}
+\textbf{نعطي :}
+$\bm{g=10\ N.kg^{-1}}$.
+					\end{exercice}%===  ===% 
   %Exercice 2
 					\begin{exercice}{}/
 					نعتبر مثلثا 
@@ -143,118 +212,287 @@ $\bm{A}$
 \end{flushleft}
 \end{minipage}
 					\end{exercice}%===  ===%
-  %Exercice 6
+  %Exercice 15
 					\begin{exercice}{}/
-					\begin{minipage}{0.6\linewidth}
-نعتبر جسما نقطيا
-$(S)$
-كتلته
-$m=2\ kg$
-ينتقل على المسار
-$ABC$.
+					نعتبر كرية كتلتها
+$\bm{m=200\ g}$،
+معلقة إلى نقطة ثابتة
+$\bm{O}$
+بواسطة خيط غير
+مدود، كتلته مهملة طوله
+$\bm{L=80\ cm}$.
+المجموعة تكون نواسا بسيطا. نمعلم
+موضع النواس بالزاوية
+$\bm{\theta}$
+التي يقيمها الخيط مع الخط الرأسي المار من
+$\bm{O}$.
+نزيح النواس عن وضع توازنه نحو اليسار بالزاوية 
+$\bm{\theta_1 = 30^o}$
+ونرسله نحو
+اليمين بالسرعة
+$\bm{V_1=1,5\ m.s^{-1}}$.
+\\أثناء الحركة، يبقى الخيط متمددا، نهمل الاحتكاكات ومقاومة الهواء،
+ونأخذ كحالة مرجعية لطاقة الوضع الثقالية المستوى الأفقي المار من موضع
+التوازن المستقر للكرية.
 \begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
-\item هل تنحفظ الطاقة الميكانيكية بين الموضعين
-$A$
-و
-$C$؟
-علل جوابك.
-\item أحسب السرعة
-$V_B$
-للجسم
-$(S)$
-عند مروره بالموضع
-$B$.
-\end{enumerate}
- نعطي :
- $g=10\ N.kg^{-1}$
- ،
- $V_A=0\ m.s^{-1}$
- ،
-  $V_C=20\ m.s^{-1}$.
+\begin{minipage}{0.6\linewidth}
+\item بين أن الطاقة الميكانيكية
+$\bm{E_m = E_c + E_{pp}}$
+تنحفظ أثناء الحركة.أحسب
+قيمتها. نأخذ
+$\bm{g=10\ N.kg^{-1}}$.
+\item أحسب القيمة القصوى
+$\bm{\theta_m}$
+التي يمكن أن يصل إليها النواس.ما
+هي حركة النواس بعد ذلك؟
+\item أحسب قيمة السرعة
+$\bm{V_1^{'}}$
+التي يجب أن تنطلق بها الكرية من
+الوضعية ذات الأفصول
+$\bm{\theta_1}$
+لكي تتمكن من المرور فوق النقطة
+$\bm{O}$
+بالسرعة
+${\bm{V=5\ m.s^{-1}}}$.
+مع العلم أن الخيط يبقى دائما ممددا.
 \end{minipage}
 \begin{minipage}{0.4\linewidth}
 \begin{flushleft}
 \begin{adjustbox}{width=0.9\linewidth}
 \fbox{\begin{tikzpicture}
-\fill[white]  (-12,9) rectangle (3,-1);
-\draw [help lines, line width = 1pt,color=orange,step=1cm] (-12,-1) grid (3,9);
-\draw[line width = 2pt] (-9.5,6) .. controls (-5,5.2) and (-6.5,0.2) .. (-2.9,0);
-\draw[line width = 2pt] (2.5,1) .. controls (-0.5,8.2) and (0,0.2) .. (-2.9,0);
-\draw[ball color=orange] (-5.655,3.6) circle (.5);
-\draw[ball color=black] (-9.5,6) circle (.1) ;
-\node at (-9.5,6.4) {\Large{$\bm{A}$}};
-\draw[ball color=black] (-2.9,0) circle (.1) ;
-\node at (-2.9,-0.4) {\Large{$\bm{B}$}};
-\draw[ball color=black] (0.5,4) circle (.1) ;
-\node at (0.5,4.4) {\Large{$\bm{C}$}};
-\draw[line width = 4pt] (2.5,0) -- (-9.5,0);
-\draw[<->,densely dashed,line width = 1.5pt] (-9.5,0.1) -- (-9.5,5.9);
-\node at (-9,3) {\Large{$\bm{h_A}$}};
-\draw[<->,densely dashed,line width = 1.5pt] (0.5,0.1) -- (0.5,3.9);
-\node at (1,2) {\Large{$\bm{h_C}$}};
-\node at (-4.7,4) {\Large{$\bm{(S)}$}};
-\draw[->,line width = 2pt] (-10.5,0) -- (-10.5,8);
-\node at (-10.93,1) {\Large{$\bm{10\ -}$}};
-\node at (-10.93,2) {\Large{$\bm{20\ -}$}};
-\node at (-10.93,3) {\Large{$\bm{30\ -}$}};
-\node at (-10.93,4) {\Large{$\bm{40\ -}$}};
-\node at (-10.93,5) {\Large{$\bm{50\ -}$}};
-\node at (-10.93,6) {\Large{$\bm{60\ -}$}};
-\node at (-9.6,7.8) {\Large{$\bm{h(m)}$}};
-\draw  (-12,9) rectangle (3,-1);
+\draw [-,line width = 2pt] (3,6) rectangle (-7,-2.5);
+\fill [white] (3,6) rectangle (-7,-2.5);
+\draw[-,line width = 2pt] (-5.6,-0.6) to (-2.4,4.8);
+\draw[-,line width = 2pt] (1.6,0) to (-2.4,4.8);
+\draw[->,line width = 1.5pt,dashed] (-2.4,-1.4) to (-2.4,4.8);
+\draw[->,line width = 2pt] (-5.6,-0.6) to (-3.2,-1.8);
+\node at (-1.2,1.6) {\Large{$\bm{\theta}$}};
+\node at (-5,-1.6) {\Large{$\bm{\overrightarrow{V_1}}$}};
+\node at (-2.4,5.2) {\Large{$\bm{O}$}};
+\node at (-3,2.5) {\Large{$\bm{\theta_1}$}};
+\draw[ball color=black] (1.6,0) circle (.5);
+\draw[<-,line width = 2pt] (-3.4,3.0679) arc (-119.9993:-90:2);
+\draw[->,line width = 2pt] (-2.4,1.8) arc (-90.0001:-51:3);
+\draw[-,line width = 2pt,dashed] (-6.4,0) arc (-129.8056:-40:6.2482);
+\draw[ball color=black] (1.6,0) circle (.5);
 \end{tikzpicture}}
 \end{adjustbox}
 \end{flushleft}
 \end{minipage}
-					\end{exercice}%===  ===%
-  %Exercice 8
-					\begin{exercice}{}/
-					نعتبر كرية كتلتها
-$m=41\ kg$
- في سقوط حر بدون سرعة
-بدئية من موضع
-$A$
-$(z_A = 2\ m)$
-حيث
-$O$
-منطبق مع
-سطح الأرض الذي نعتبره كحالة مرجعية لطاقة الوضع
-الثقالية.
-\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
-\item أعط تعبير طاقة الوضع الثقالية
-$E_{pp}$
-للكرية عند لحظة
-$t$
-وحدد قيمة
-$E_{pp}(A)$
-لحظة بداية السقوط الحر للكرية.
-\item حدد قيمة
-$E_{C}(A)$
-الطاقة الحركية للكرية لحظة بداية
-سقوطها الحر.
-\item المقدار
-$E_m = E_{c}+E_{pp}$
-ثابت مع مرور الزمن،
-علل ذلك واحسب قيمة
-$E_{m}$.
-\item أوجد تعبير
-$E_{c}$
-بدلالة
-$z$
-أنسوب مركز قصور الكرية.
-\item أرسم في نفس المعلم تغيرات كل من
-$E_{pp}$
-و
-$E_{c}$
-و
-$E_{m}$
-بدلالة
-$z$
-وحدد نوع التحول الطاقي الحاصل خلال
-السقوط الحر للكرية.
 \end{enumerate}
- نعطي :
- $g=10\ N.kg^{-1}$.
+					\end{exercice}%===  ===% 
+  %Exercice 14
+					\begin{exercice}{}/
+					نعتبر المدار
+$\bm{ABC}$
+المكون من الجزء
+المستقيمي
+$\bm{AB}$
+والجزء الدائري
+$\bm{BC}$
+شعاعه
+$\bm{r=OB=OC}$.
+\\نرسل من النقطة
+$\bm{A}$
+جسما
+$\bm{(S)}$
+كتلته
+$\bm{m=50\ g}$
+شبيه بنقطة مادية بسرعة
+$\bm{V_A = 5\ m.s^{-1}}$
+نحو الأعلى في الاتجاه
+$\bm{AB}$.\\
+\begin{minipage}{0.6\linewidth}
+فينزلق على الجزء
+$\bm{AB}$
+ليصل
+إلى النقطة
+$\bm{B}$
+بالسرعة
+$\bm{V_B}$.
+\\نعتبر المستوى
+$\bm{(\pi)}$
+مرجعا لطاقة الوضع الثقالية .\\
+نعطي :
+$\bm{\alpha = 60^o}$ ; $\bm{g=10.m.s_{-2}}$ ; $\bm{AB=2\ r=1\ m}$.
+\\باستعمال تغير الطاقة الميكانيكة للجسم
+$\bm{(S)}$
+أوجد :
+\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+\item تعبير السرعة
+$\bm{V_B}$.
+أحسب قيمتها.
+\item تعبير السرعة
+$\bm{V_M}$
+بنقطة
+$\bm{M}$
+من القوس
+$\bm{\widehat{BC}}$.
+\\استنتج قيمة الزاوية
+$\bm{\theta_{max}}$
+الأفصول الزاوي للنقطة
+$\bm{M}$
+حيث يتوقف الجسم
+$\bm{(S)}$.
+\item أعط تعبير وأحسب قيمة السرعة الدنوية التي يجب أن ينطلق
+بها الجسم
+$\bm{(S)}$
+من النقطة
+$\bm{A}$
+لكي يصل إلى النقطة
+$\bm{C}$
+في الحالتين التاليتين :
+\begin{enumerate}
+\item الحركة تتم بدون احتكاك طول السكة
+$\bm{ABC}$.
+\item الحركة تتم باحتكاك طول السكة
+$\bm{ABC}$
+حيث قوة الاحتكاك
+$\bm{{\overrightarrow{f}}}$
+تبقى مماسة للمسار وشدتها ثابتة
+$\bm{f=0,2\ N}$.
+\end{enumerate}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\begin{flushleft}
+\begin{adjustbox}{width=0.95\linewidth}
+\fbox{\begin{tikzpicture}
+\fill[-,white,line width =2pt]   (3,10.5) rectangle (-6.5,-5.5);
+\draw[line width =3pt] (-3.5,5) -- (-5.5,-4);
+\draw[dashed,line width =3pt] (1,5) -- (-2,7.5);
+\draw[dashed,line width =3pt] (-3.5,5) -- (1,5);
+\draw[-,line width =3pt] (1,9) -- (1,-4);
+\fill [] (2,-4) rectangle (-5.5,-4.5);
+\draw [->,line width =3pt] ;
+\draw[ball color=black] (2,-4) circle (.15);
+\draw[ball color=black] (-5.5,-4) circle (.15);
+\draw[ball color=black] (1,9) circle (.15);
+\draw[ball color=black] (1,5) circle (.15);
+\draw[ball color=black] (-3.5,5) circle (.15);
+\node at (-6,-4) {\textbf{\Large{A}}};
+\node at (1.5,5) {\textbf{\Large{O}}};
+\node at (2.5,-4) {\textbf{\Large{O'}}};
+\node at (1,9.5) {\textbf{\Large{C}}};
+\node at (-2.5,8) {\textbf{\Large{M}}};
+\node at (-6,1) {\textbf{\Large{(S)}}};
+\node at (-1.5,-5) {\textbf{\Large{$(\bm{\pi})$}}};
+\node at (-4,5) {\textbf{\Large{B}}};
+\node at (0.5,-3.5) {\textbf{\Large{H}}};
+\node at (2.5,9.5) {\textbf{\LARGE{z}}};
+\node at (-1.4,5.8) {\textbf{\LARGE{$\bm{\theta}$}}};
+\node at (-3,-2) {\textbf{\LARGE{$\bm{\alpha}$}}};
+\draw[->,line width =3pt] ;
+%\draw [-,line width =3pt](0.5,0) arc (-75.6126:200:3.9534);
+\draw[<-,line width =3pt] (2,10) -- (2,-4);
+\draw  [-,line width =3pt](-3.5,5) arc (168.1582:94:5);
+\draw[->,line width =3pt](-1,5) arc (180:145:2);
+\draw [->,line width =3pt](-3,-4) arc (0:78:2.5);
+\draw[ball color=black] (-2,7.5) circle (.15);
+\draw[ball color=orange] (-5,0.5) circle (.5);
+\draw[ball color=black] (1,-4) circle (.15);
+\end{tikzpicture}}
+\end{adjustbox}
+\end{flushleft}
+\end{minipage}
+					\end{exercice}%===  ===% 
+  %Exercice 13
+					\begin{exercice}{}/
+					نعتبر جسما صلبا كتلته
+$\bm{m=0,6\ kg}$،
+قابلا للحركة على المسار
+$\bm{ABCD}$
+المكون من :\\
+\begin{minipage}{0.5\linewidth}
+\indent
+\begin{itemize}
+\item $AB$ : 
+جزء مستقيمي طوله
+$AB=3\ m$
+مائل بالزاوية
+$\bm{\alpha = 50^o}$
+بالنسبة للمستوى الأفقي.
+\item $\bm{BC}$ : 
+جزء من دائرة شعاعها
+$\bm{r=80\ cm}$.
+\item $\bm{CD}$ : 
+جزء مستقيمي أفقي طوله
+$\bm{CD=3\ m}$.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{flushleft}
+\begin{adjustbox}{width=0.95\linewidth}
+\fbox{\begin{tikzpicture}
+\draw[line width =2pt]   (9.5,5.5) rectangle (-9,-5);
+\fill[white]   (9.5,5.5) rectangle (-9,-5);
+\draw[line width =3pt] (-3.5,-2) -- (-8.5,3.5);
+\draw[line width =3pt] (1,-4) arc (-90:-140:6);
+\draw[line width =3pt] (1,2) -- (-3.5,-2);
+\draw[dashed,line width =3pt] (-8.5,-2) -- (-3.5,-2);
+\draw[<-,line width =3pt] (1,5) -- (1,-4);
+\fill [] (1,-4) rectangle (9,-4.5);
+\draw[ball color=orange] (-6.6,2.4) circle (.65);
+\draw [->,line width =3pt](1,0.5) arc (-90.0002:-140:1.5);
+\draw[ball color=white] (1,-4) circle (.15);
+\draw[ball color=black] (1,-4) circle (.15);
+\draw[ball color=black] (-8.5,3.5) circle (.15);
+\draw[ball color=black] (9,-4) circle (.15);
+\draw[ball color=black] (1,2) circle (.15);
+\draw[ball color=black] (-3.5,-2) circle (.15);
+\node at (-8.5,4) {\textbf{\Large{A}}};
+\node at (0.5,2.5) {\textbf{\Large{O}}};
+\node at (0.5,-4.5) {\textbf{\Large{C}}};
+\node at (9,-3.5) {\textbf{\Large{D}}};
+\node at (-5.6,3.2) {\textbf{\Large{(S)}}};
+\node at (-3.5,-2.5) {\textbf{\Large{B}}};
+\node at (1.5,4.5) {\textbf{\LARGE{z}}};
+\node at (0,-0.5) {\textbf{\LARGE{$\bm{\alpha}$}}};
+\node at (-6,-1) {\textbf{\LARGE{$\bm{\alpha}$}}};
+\draw[->,line width =3pt](-5.5,-2) arc (180:132:2);
+\end{tikzpicture}}
+\end{adjustbox}
+\end{flushleft}
+\end{minipage}
+\\نطلق الجسم
+$\bm{(S)}$
+من النقطة
+$\bm{A}$
+بدون سرعة بدئية،
+الحركة على المسار
+$\bm{ABC}$
+تتم بدون احتكاك.
+\\نختار المستوى الأفقي المار من
+$\bm{C}$
+مرجعا لطاقة الوضع الثقالية.
+\\نعتبر النقطة
+$\bm{C}$
+أصلا للأناسيب.
+\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
+\item عبر عن طاقة الوضع الثقالية والطاقة الميكانيكية للجسم
+$\bm{(S)}$
+في الموضع
+$\bm{A}$
+أحسب قيمها.
+\item أحسب كلا من طاقة الوضع الثقالية والطاقة الحركية للجسم
+$\bm{(S)}$
+في الموضع
+$\bm{B}$.
+\item أحسب كلا من طاقة الوضع الثقالية والطاقة الحركية للجسم
+$\bm{(S)}$
+في الموضع
+$\bm{C}$
+\item يصل الجسم
+$\bm{(S)}$
+إلى النقطة
+$\bm{D}$
+بسرعة منعدمة.أحسب شدة قوة الاحتكاك بين النقطتين
+$\bm{C}$
+و
+$\bm{D}$.
+استنتج كمية الحرارة المحررة خلال الانتقال
+$\bm{CD}$.
+\end{enumerate}
 					\end{exercice}%===  ===%
   %Exercice 12
 					\begin{exercice}{}/
@@ -358,103 +596,5 @@ $\bm{\theta}$
 \end{enumerate}
 \end{enumerate}
 					\end{exercice}%===  ===% 
-  %Exercice 13
-					\begin{exercice}{}/
-					نعتبر جسما صلبا كتلته
-$\bm{m=0,6\ kg}$،
-قابلا للحركة على المسار
-$\bm{ABCD}$
-المكون من :\\
-\begin{minipage}{0.5\linewidth}
-\indent
-\begin{itemize}
-\item $AB$ : 
-جزء مستقيمي طوله
-$AB=3\ m$
-مائل بالزاوية
-$\bm{\alpha = 50^o}$
-بالنسبة للمستوى الأفقي.
-\item $\bm{BC}$ : 
-جزء من دائرة شعاعها
-$\bm{r=80\ cm}$.
-\item $\bm{CD}$ : 
-جزء مستقيمي أفقي طوله
-$\bm{CD=3\ m}$.
-\end{itemize}
-\end{minipage}
-\begin{minipage}{0.5\linewidth}
-\begin{flushleft}
-\begin{adjustbox}{width=0.95\linewidth}
-\fbox{\begin{tikzpicture}
-\draw[line width =2pt]   (9.5,5.5) rectangle (-9,-5);
-\fill[white]   (9.5,5.5) rectangle (-9,-5);
-\draw[line width =3pt] (-3.5,-2) -- (-8.5,3.5);
-\draw[line width =3pt] (1,-4) arc (-90:-140:6);
-\draw[line width =3pt] (1,2) -- (-3.5,-2);
-\draw[dashed,line width =3pt] (-8.5,-2) -- (-3.5,-2);
-\draw[<-,line width =3pt] (1,5) -- (1,-4);
-\fill [] (1,-4) rectangle (9,-4.5);
-\draw[ball color=orange] (-6.6,2.4) circle (.65);
-\draw [->,line width =3pt](1,0.5) arc (-90.0002:-140:1.5);
-\draw[ball color=white] (1,-4) circle (.15);
-\draw[ball color=black] (1,-4) circle (.15);
-\draw[ball color=black] (-8.5,3.5) circle (.15);
-\draw[ball color=black] (9,-4) circle (.15);
-\draw[ball color=black] (1,2) circle (.15);
-\draw[ball color=black] (-3.5,-2) circle (.15);
-\node at (-8.5,4) {\textbf{\Large{A}}};
-\node at (0.5,2.5) {\textbf{\Large{O}}};
-\node at (0.5,-4.5) {\textbf{\Large{C}}};
-\node at (9,-3.5) {\textbf{\Large{D}}};
-\node at (-5.6,3.2) {\textbf{\Large{(S)}}};
-\node at (-3.5,-2.5) {\textbf{\Large{B}}};
-\node at (1.5,4.5) {\textbf{\LARGE{z}}};
-\node at (0,-0.5) {\textbf{\LARGE{$\bm{\alpha}$}}};
-\node at (-6,-1) {\textbf{\LARGE{$\bm{\alpha}$}}};
-\draw[->,line width =3pt](-5.5,-2) arc (180:132:2);
-\end{tikzpicture}}
-\end{adjustbox}
-\end{flushleft}
-\end{minipage}
-\\نطلق الجسم
-$\bm{(S)}$
-من النقطة
-$\bm{A}$
-بدون سرعة بدئية،
-الحركة على المسار
-$\bm{ABC}$
-تتم بدون احتكاك.
-\\نختار المستوى الأفقي المار من
-$\bm{C}$
-مرجعا لطاقة الوضع الثقالية.
-\\نعتبر النقطة
-$\bm{C}$
-أصلا للأناسيب.
-\begin{enumerate}[label=\protect\circled{\color{white}\textbf{\arabic*}}]
-\item عبر عن طاقة الوضع الثقالية والطاقة الميكانيكية للجسم
-$\bm{(S)}$
-في الموضع
-$\bm{A}$
-أحسب قيمها.
-\item أحسب كلا من طاقة الوضع الثقالية والطاقة الحركية للجسم
-$\bm{(S)}$
-في الموضع
-$\bm{B}$.
-\item أحسب كلا من طاقة الوضع الثقالية والطاقة الحركية للجسم
-$\bm{(S)}$
-في الموضع
-$\bm{C}$
-\item يصل الجسم
-$\bm{(S)}$
-إلى النقطة
-$\bm{D}$
-بسرعة منعدمة.أحسب شدة قوة الاحتكاك بين النقطتين
-$\bm{C}$
-و
-$\bm{D}$.
-استنتج كمية الحرارة المحررة خلال الانتقال
-$\bm{CD}$.
-\end{enumerate}
-					\end{exercice}%===  ===%
   
 \end{document}
